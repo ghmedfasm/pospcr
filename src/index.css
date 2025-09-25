@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Medical PowerPoint Presentation Design System - Professional Medical Colors */
+
+@layer base {
+  :root {
+    /* Medical Blue Theme */
+    --background: 0 0% 100%;
+    --foreground: 220 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+
+    /* Medical Professional Blue */
+    --primary: 210 95% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 210 85% 40%;
+
+    /* Medical Secondary - Light Blue */
+    --secondary: 210 40% 95%;
+    --secondary-foreground: 210 95% 35%;
+
+    /* Accent - Medical Red for Emergency/Critical */
+    --accent: 0 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Muted - Medical Gray */
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 15% 45%;
+
+    /* Medical Success - Green for positive outcomes */
+    --success: 145 65% 42%;
+    --success-foreground: 0 0% 100%;
+
+    /* Medical Warning - Orange for caution */
+    --warning: 35 85% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 210 95% 45%;
+
+    --radius: 0.75rem;
+
+    /* PowerPoint-style gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 95% 45%), hsl(210 85% 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(210 40% 95%), hsl(220 30% 98%));
+    --gradient-slide: linear-gradient(145deg, hsl(210 40% 98%), hsl(220 20% 96%));
+
+    /* Medical shadows */
+    --shadow-slide: 0 10px 40px hsl(210 50% 50% / 0.15);
+    --shadow-card: 0 4px 20px hsl(210 50% 50% / 0.1);
+    --shadow-button: 0 2px 10px hsl(210 95% 45% / 0.3);
+
+    /* Transitions */
+    --transition-slide: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme for medical presentation */
+    --background: 220 25% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --primary: 210 95% 55%;
+    --primary-foreground: 220 25% 8%;
+    --primary-hover: 210 85% 60%;
+
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 210 95% 70%;
+
+    --accent: 0 85% 65%;
+    --accent-foreground: 220 25% 8%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 65%;
+
+    --success: 145 65% 52%;
+    --success-foreground: 220 25% 8%;
+
+    --warning: 35 85% 65%;
+    --warning-foreground: 220 25% 8%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 210 95% 55%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(210 95% 55%), hsl(210 85% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(220 20% 15%), hsl(220 15% 18%));
+    --gradient-slide: linear-gradient(145deg, hsl(220 20% 12%), hsl(220 15% 15%));
+
+    --shadow-slide: 0 10px 40px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.2);
+    --shadow-button: 0 2px 10px hsl(210 95% 55% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Medical Presentation Specific Styles */
+  .slide-container {
+    background: var(--gradient-slide);
+    box-shadow: var(--shadow-slide);
+    transition: var(--transition-slide);
+  }
+
+  .slide-enter {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  .slide-enter-active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: var(--transition-slide);
+  }
+
+  .slide-exit {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .slide-exit-active {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: var(--transition-slide);
+  }
+
+  .medical-list {
+    @apply space-y-3;
+  }
+
+  .medical-list li {
+    @apply flex items-start gap-3 text-foreground;
+  }
+
+  .medical-list li::before {
+    content: "•";
+    @apply text-primary font-bold text-lg mt-1 flex-shrink-0;
+  }
+
+  /* Table styles for medical data */
+  .medical-table {
+    @apply w-full border-collapse;
+  }
+
+  .medical-table th,
+  .medical-table td {
+    @apply border border-border px-4 py-3 text-left;
+  }
+
+  .medical-table th {
+    @apply bg-primary text-primary-foreground font-semibold;
+  }
+
+  .medical-table tr:nth-child(even) {
+    @apply bg-secondary/30;
+  }
+}
