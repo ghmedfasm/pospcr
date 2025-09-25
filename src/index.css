@@ -190,4 +190,79 @@
   .medical-table tr:nth-child(even) {
     @apply bg-secondary/30;
   }
+
+  /* Medical PowerPoint Presentation Design System - Professional Medical Colors */
+
+  /* Responsive Typography for Widescreen */
+  @media (min-width: 1280px) {
+    .slide-container h2 {
+      font-size: 2.5rem;
+    }
+
+    .slide-container h3 {
+      font-size: 1.5rem;
+    }
+
+    .slide-container p {
+      font-size: 1.125rem;
+    }
+
+    .slide-container .text-lg {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .slide-container h2 {
+      font-size: 3rem;
+    }
+
+    .slide-container h3 {
+      font-size: 1.75rem;
+    }
+
+    .slide-container p {
+      font-size: 1.25rem;
+    }
+
+    .slide-container .text-lg {
+      font-size: 1.375rem;
+    }
+  }
+
+  /* Widescreen Presentation Optimizations */
+  .slide-container {
+    min-height: calc(100vh - 200px);
+  }
+
+  /* Optimize content layout for widescreen */
+  @media (min-width: 1280px) {
+    .slide-container {
+      padding: 2rem 3rem;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .slide-container {
+      padding: 2.5rem 4rem;
+    }
+  }
+
+  /* Ensure content scales properly */
+  .presentation-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .presentation-grid {
+      gap: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .presentation-grid {
+      gap: 2.5rem;
+    }
+  }
 }

@@ -27,17 +27,17 @@ const PowerPointPresentation = () => {
       subtitle: "Uma Abordagem Sistematizada para 2025",
       type: 'title',
       content: (
-        <div className="text-center space-y-8">
-          <div className="text-6xl mb-8">
+        <div className="h-full flex flex-col justify-center items-center text-center space-y-8">
+          <div className="text-8xl mb-6">
             <i className="fas fa-heartbeat text-accent"></i>
           </div>
-          <div className="text-lg text-muted-foreground">
+          <div className="text-xl text-muted-foreground max-w-4xl">
             Baseado nas Diretrizes da AHA e Neurocritical Care Society de 2023
           </div>
-          <div className="flex justify-center items-center gap-4 mt-12">
-            <i className="fas fa-stethoscope text-primary text-2xl"></i>
-            <i className="fas fa-brain text-success text-2xl"></i>
-            <i className="fas fa-heart text-accent text-2xl"></i>
+          <div className="flex justify-center items-center gap-8 mt-8">
+            <i className="fas fa-stethoscope text-primary text-4xl"></i>
+            <i className="fas fa-brain text-success text-4xl"></i>
+            <i className="fas fa-heart text-accent text-4xl"></i>
           </div>
         </div>
       ),
@@ -47,31 +47,52 @@ const PowerPointPresentation = () => {
       title: "O Paradigma Pós-RCE: Uma Batalha Contínua",
       type: 'content',
       content: (
-        <div className="space-y-6">
-          <div className="bg-accent/10 p-6 rounded-lg border-l-4 border-accent">
-            <h3 className="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
-              <i className="fas fa-exclamation-triangle"></i>
-              O Desafio Máximo
-            </h3>
-            <p className="text-lg">A Parada Cardiorrespiratória (PCR) é o auge da emergência médica.</p>
-          </div>
-          
-          <div className="bg-primary/10 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
-              <i className="fas fa-chart-line"></i>
-              Estatísticas Sóbrias (Consenso AHA/NCS 2023)
-            </h3>
-            <ul className="medical-list">
-              <li><strong>9%</strong> de sobrevivência até a alta em PCR extra-hospitalar</li>
-              <li><strong>23%</strong> de sobrevivência até a alta em PCR intra-hospitalar</li>
-            </ul>
-          </div>
+        <div className="h-full flex flex-col space-y-8">
+          {/* Layout horizontal para widescreen */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 flex-1">
+            {/* Coluna esquerda */}
+            <div className="space-y-6">
+              <div className="bg-accent/10 p-8 rounded-lg border-l-4 border-accent">
+                <h3 className="text-2xl font-semibold text-accent mb-4 flex items-center gap-3">
+                  <i className="fas fa-exclamation-triangle text-2xl"></i>
+                  O Desafio Máximo
+                </h3>
+                <p className="text-xl">A Parada Cardiorrespiratória (PCR) é o auge da emergência médica.</p>
+              </div>
+              
+              <div className="bg-primary/10 p-8 rounded-lg">
+                <h3 className="text-2xl font-semibold text-primary mb-4 flex items-center gap-3">
+                  <i className="fas fa-chart-line text-2xl"></i>
+                  Estatísticas AHA/NCS 2023
+                </h3>
+                <div className="space-y-4">
+                  <div className="bg-white/60 p-4 rounded-lg text-center">
+                    <div className="text-4xl font-bold text-accent">9%</div>
+                    <div className="text-base">PCR Extra-hospitalar</div>
+                  </div>
+                  <div className="bg-white/60 p-4 rounded-lg text-center">
+                    <div className="text-4xl font-bold text-primary">23%</div>
+                    <div className="text-base">PCR Intra-hospitalar</div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <div className="bg-warning/10 p-6 rounded-lg border-l-4 border-warning text-center">
-            <p className="text-lg font-medium">
-              <i className="fas fa-flag-checkered mr-2"></i>
-              O RCE não é a linha de chegada, é o <strong>tiro de partida</strong>. A corrida contra o tempo pelo prognóstico do paciente começa agora.
-            </p>
+            {/* Coluna direita - Mensagem central */}
+            <div className="flex items-center justify-center">
+              <div className="bg-gradient-to-br from-warning/20 to-accent/15 p-8 rounded-lg border-2 border-warning/40 text-center">
+                <div className="text-6xl mb-6">
+                  <i className="fas fa-flag-checkered text-warning"></i>
+                </div>
+                <h3 className="text-2xl font-bold text-accent mb-4">RCE ≠ Fim</h3>
+                <p className="text-xl font-medium">
+                  É o <strong className="text-warning">tiro de partida</strong>
+                </p>
+                <p className="text-lg mt-4">
+                  A corrida contra o tempo pelo prognóstico começa <strong>agora</strong>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       ),
@@ -81,46 +102,48 @@ const PowerPointPresentation = () => {
       title: "A Síndrome Pós-Parada Cardíaca",
       type: 'content',
       content: (
-        <div className="space-y-6">
-          <p className="text-lg mb-6">Uma tempestade fisiopatológica complexa com quatro componentes principais:</p>
+        <div className="h-full flex flex-col space-y-8">
+          <div className="text-center">
+            <p className="text-xl mb-6">Uma tempestade fisiopatológica complexa com quatro componentes principais:</p>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="p-6 bg-gradient-to-br from-accent/10 to-accent/5 border-accent/30">
-              <div className="flex items-center gap-3 mb-3">
-                <i className="fas fa-brain text-accent text-2xl"></i>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 flex-1">
+            <Card className="p-6 bg-gradient-to-br from-accent/10 to-accent/5 border-accent/30 h-fit">
+              <div className="text-center space-y-3">
+                <i className="fas fa-brain text-accent text-4xl"></i>
                 <h3 className="text-lg font-semibold">Lesão Cerebral Anóxica</h3>
+                <p className="text-base">Principal determinante do prognóstico</p>
               </div>
-              <p>O principal determinante do prognóstico a longo prazo.</p>
             </Card>
 
-            <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30">
-              <div className="flex items-center gap-3 mb-3">
-                <i className="fas fa-heart text-primary text-2xl"></i>
+            <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30 h-fit">
+              <div className="text-center space-y-3">
+                <i className="fas fa-heart text-primary text-4xl"></i>
                 <h3 className="text-lg font-semibold">Disfunção Miocárdica</h3>
+                <p className="text-base">"Miocárdio atordoado" e instabilidade</p>
               </div>
-              <p>O "miocárdio atordoado" que leva à instabilidade.</p>
             </Card>
 
-            <Card className="p-6 bg-gradient-to-br from-warning/10 to-warning/5 border-warning/30">
-              <div className="flex items-center gap-3 mb-3">
-                <i className="fas fa-fire text-warning text-2xl"></i>
+            <Card className="p-6 bg-gradient-to-br from-warning/10 to-warning/5 border-warning/30 h-fit">
+              <div className="text-center space-y-3">
+                <i className="fas fa-fire text-warning text-4xl"></i>
                 <h3 className="text-lg font-semibold">Resposta Sistêmica</h3>
+                <p className="text-base">Cascata inflamatória isquemia/reperfusão</p>
               </div>
-              <p>Uma cascata inflamatória global de isquemia/reperfusão.</p>
             </Card>
 
-            <Card className="p-6 bg-gradient-to-br from-success/10 to-success/5 border-success/30">
-              <div className="flex items-center gap-3 mb-3">
-                <i className="fas fa-search-plus text-success text-2xl"></i>
+            <Card className="p-6 bg-gradient-to-br from-success/10 to-success/5 border-success/30 h-fit">
+              <div className="text-center space-y-3">
+                <i className="fas fa-search-plus text-success text-4xl"></i>
                 <h3 className="text-lg font-semibold">Patologia Precipitante</h3>
+                <p className="text-base">Causa original que precisa ser tratada</p>
               </div>
-              <p>A causa original da parada que precisa ser tratada.</p>
             </Card>
           </div>
 
-          <div className="bg-primary/10 p-6 rounded-lg text-center mt-8">
-            <p className="text-lg font-medium">
-              O manejo qualificado desta síndrome define a <strong>sobrevivência com bom resultado neurológico</strong>.
+          <div className="bg-gradient-to-r from-primary/15 to-success/10 p-6 rounded-lg border-2 border-primary/30 text-center">
+            <p className="text-xl font-bold">
+              O manejo qualificado desta síndrome define a <strong className="text-success">sobrevivência com bom resultado neurológico</strong>
             </p>
           </div>
         </div>
@@ -131,41 +154,53 @@ const PowerPointPresentation = () => {
       title: "Fase I - Estabilização Imediata e Prevenção de Nova PCR",
       type: 'content',
       content: (
-        <div className="space-y-6">
-          <div className="bg-accent/10 p-6 rounded-lg border-l-4 border-accent">
-            <h3 className="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
-              <i className="fas fa-clock"></i>
-              Os Primeiros 20 Minutos são Traiçoeiros
-            </h3>
-            <ul className="medical-list">
-              <li><strong className="text-accent">4 em cada 10 pacientes</strong> sofrem uma nova PCR após o RCE</li>
-              <li><strong>Causa:</strong> Miocárdio atordoado + Vasoplegia sistêmica</li>
-            </ul>
-          </div>
+        <div className="h-full flex flex-col space-y-8">
+          {/* Layout horizontal para melhor aproveitamento */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 flex-1">
+            {/* Coluna esquerda - Informações principais */}
+            <div className="space-y-6">
+              <div className="bg-accent/10 p-8 rounded-lg border-l-4 border-accent">
+                <h3 className="text-2xl font-semibold text-accent mb-4 flex items-center gap-3">
+                  <i className="fas fa-clock text-2xl"></i>
+                  Os Primeiros 20 Minutos
+                </h3>
+                <div className="space-y-4">
+                  <div className="bg-white/60 p-4 rounded-lg text-center">
+                    <div className="text-5xl font-bold text-accent mb-2">4/10</div>
+                    <div className="text-base">Sofrem nova PCR</div>
+                  </div>
+                  <p className="text-lg"><strong>Causa:</strong> Miocárdio atordoado + Vasoplegia sistêmica</p>
+                </div>
+              </div>
 
-          <div className="bg-primary/10 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
-              <i className="fas fa-target"></i>
-              Objetivo
-            </h3>
-            <p className="text-lg">Abordagem <strong>agressiva</strong> para prevenir lesão secundária e nova parada.</p>
-          </div>
+              <div className="bg-primary/10 p-8 rounded-lg">
+                <h3 className="text-2xl font-semibold text-primary mb-4 flex items-center gap-3">
+                  <i className="fas fa-target text-2xl"></i>
+                  Objetivo
+                </h3>
+                <p className="text-xl">Abordagem <strong>agressiva</strong> para prevenir lesão secundária e nova parada</p>
+              </div>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-            <div className="text-center p-4 bg-accent/5 rounded-lg">
-              <i className="fas fa-heart-pulse text-accent text-3xl mb-2"></i>
-              <div className="text-2xl font-bold text-accent">40%</div>
-              <div className="text-sm">Risco de Nova PCR</div>
-            </div>
-            <div className="text-center p-4 bg-primary/5 rounded-lg">
-              <i className="fas fa-stopwatch text-primary text-3xl mb-2"></i>
-              <div className="text-2xl font-bold text-primary">20min</div>
-              <div className="text-sm">Janela Crítica</div>
-            </div>
-            <div className="text-center p-4 bg-success/5 rounded-lg">
-              <i className="fas fa-shield-alt text-success text-3xl mb-2"></i>
-              <div className="text-2xl font-bold text-success">Prevenção</div>
-              <div className="text-sm">Foco Principal</div>
+            {/* Coluna direita - Indicadores visuais */}
+            <div className="flex items-center justify-center">
+              <div className="grid grid-cols-1 gap-6 w-full max-w-sm">
+                <div className="text-center p-8 bg-accent/10 rounded-lg border-2 border-accent/30">
+                  <i className="fas fa-heart-pulse text-accent text-5xl mb-4"></i>
+                  <div className="text-4xl font-bold text-accent mb-2">40%</div>
+                  <div className="text-base">Risco de Nova PCR</div>
+                </div>
+                <div className="text-center p-8 bg-primary/10 rounded-lg border-2 border-primary/30">
+                  <i className="fas fa-stopwatch text-primary text-5xl mb-4"></i>
+                  <div className="text-4xl font-bold text-primary mb-2">20min</div>
+                  <div className="text-base">Janela Crítica</div>
+                </div>
+                <div className="text-center p-8 bg-success/10 rounded-lg border-2 border-success/30">
+                  <i className="fas fa-shield-alt text-success text-5xl mb-4"></i>
+                  <div className="text-2xl font-bold text-success mb-2">Prevenção</div>
+                  <div className="text-base">Foco Principal</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -176,47 +211,96 @@ const PowerPointPresentation = () => {
       title: "Fase I - Suporte Circulatório",
       type: 'content',
       content: (
-        <div className="space-y-6">
-          <div className="bg-primary/10 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
-              <i className="fas fa-tint"></i>
-              Fluidos
-            </h3>
-            <ul className="medical-list">
-              <li>Bolus inicial de <strong>1000ML</strong> de cristaloide isotônico</li>
-              <li><strong>Preferência:</strong> Soluções balanceadas (ex: Ringer Lactato) para evitar acidose hiperclorêmica</li>
-              <li><strong className="text-accent">⚠️ Ponto de atenção:</strong> Cuidado especial em pacientes com ICC</li>
-            </ul>
+        <div className="space-y-8">
+          {/* Grid principal com 3 colunas em widescreen */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 lg:gap-8">
+            <div className="bg-primary/10 p-8 rounded-lg border border-primary/20">
+              <h3 className="text-2xl font-semibold text-primary mb-6 flex items-center gap-3">
+                <i className="fas fa-tint text-2xl"></i>
+                Fluidos
+              </h3>
+              <div className="space-y-4">
+                <div className="bg-white/60 p-4 rounded-lg text-center">
+                  <div className="text-4xl font-bold text-primary mb-1">1000ML</div>
+                  <div className="text-base text-muted-foreground">Bolus inicial</div>
+                </div>
+                <div className="space-y-3">
+                  <p className="text-base"><strong>Preferência:</strong> Soluções balanceadas</p>
+                  <p className="text-base text-muted-foreground">(ex: Ringer Lactato)</p>
+                  <div className="bg-accent/10 p-3 rounded-lg">
+                    <p className="text-base font-medium text-accent">
+                      <i className="fas fa-exclamation-triangle mr-2"></i>
+                      <strong>ICC:</strong> Cuidado especial
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-accent/10 p-8 rounded-lg border border-accent/20">
+              <h3 className="text-2xl font-semibold text-accent mb-6 flex items-center gap-3">
+                <i className="fas fa-syringe text-2xl"></i>
+                Vasopressores
+              </h3>
+              <div className="space-y-4">
+                <div className="bg-white/60 p-4 rounded-lg text-center">
+                  <div className="text-2xl font-bold text-accent mb-1">Norepinefrina</div>
+                  <div className="text-base text-muted-foreground">1ª linha</div>
+                </div>
+                <div className="bg-accent/20 p-4 rounded-lg">
+                  <p className="text-lg font-bold text-center text-accent mb-2">
+                    <i className="fas fa-exclamation-triangle mr-2"></i>
+                    EM PARALELO com fluidos
+                  </p>
+                  <p className="text-base text-center">Não sequencial!</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-success/10 p-8 rounded-lg border border-success/20">
+              <h3 className="text-2xl font-semibold text-success mb-6 flex items-center gap-3">
+                <i className="fas fa-chart-line text-2xl"></i>
+                Monitorização
+              </h3>
+              <div className="space-y-4">
+                <div className="bg-white/60 p-4 rounded-lg">
+                  <div className="flex items-center gap-3 mb-2">
+                    <i className="fas fa-heartbeat text-success text-xl"></i>
+                    <span className="font-bold text-xl text-success">PAI</span>
+                  </div>
+                  <div className="text-base">Pressão Arterial Invasiva</div>
+                </div>
+                <div className="bg-white/60 p-4 rounded-lg">
+                  <div className="flex items-center gap-3 mb-2">
+                    <i className="fas fa-wave-square text-success text-xl"></i>
+                    <span className="font-bold text-xl text-success">EtCO₂</span>
+                  </div>
+                  <div className="text-base">Capnografia</div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="bg-accent/10 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
-              <i className="fas fa-syringe"></i>
-              Vasopressores
-            </h3>
-            <ul className="medical-list">
-              <li><strong>Norepinefrina</strong> é o agente de primeira linha</li>
-              <li><strong className="text-accent">Ponto Crítico:</strong> Iniciar EM PARALELO com os fluidos, não sequencialmente</li>
-              <li>⚠️ <strong>Não espere a falha da reposição volêmica!</strong></li>
-            </ul>
-          </div>
-
-          <div className="bg-success/10 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-success mb-4 flex items-center gap-2">
-              <i className="fas fa-chart-line"></i>
-              Monitorização
-            </h3>
-            <ul className="medical-list">
-              <li><strong>Pressão Arterial Invasiva (PAI)</strong> - Essencial</li>
-              <li><strong>Capnografia (EtCO₂)</strong> - Essencial</li>
-            </ul>
-          </div>
-
-          <div className="bg-warning/10 p-4 rounded-lg text-center">
-            <p className="font-medium">
-              <i className="fas fa-exclamation-circle mr-2"></i>
-              Fluidos + Vasopressores = <strong>PARALELO</strong>, não sequencial!
-            </p>
+          {/* Destaque principal - conceito chave */}
+          <div className="bg-gradient-to-r from-warning/20 to-accent/20 p-8 rounded-lg border-2 border-warning/40">
+            <div className="text-center">
+              <div className="flex justify-center items-center gap-6 mb-4 flex-wrap">
+                <div className="flex items-center gap-3 text-primary">
+                  <i className="fas fa-tint text-3xl"></i>
+                  <span className="text-2xl font-bold">Fluidos</span>
+                </div>
+                <div className="text-3xl font-bold text-warning">+</div>
+                <div className="flex items-center gap-3 text-accent">
+                  <i className="fas fa-syringe text-3xl"></i>
+                  <span className="text-2xl font-bold">Vasopressores</span>
+                </div>
+                <div className="text-3xl font-bold text-warning">=</div>
+                <div className="text-2xl font-bold text-success bg-success/10 px-4 py-2 rounded-lg">
+                  PARALELO
+                </div>
+              </div>
+              <p className="text-lg font-medium text-muted-foreground">Não sequencial!</p>
+            </div>
           </div>
         </div>
       ),
@@ -226,46 +310,69 @@ const PowerPointPresentation = () => {
       title: "Fase I - Suporte Respiratório e Vias Aéreas",
       type: 'content',
       content: (
-        <div className="space-y-6">
-          <div className="bg-primary/10 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
-              <i className="fas fa-lungs"></i>
-              Prioridades Iniciais
-            </h3>
-            <ul className="medical-list">
-              <li>Estabilização <strong>cardiovascular</strong> tem prioridade em um paciente não intubado</li>
-              <li>Ventilação com <strong>bolsa-válvula-máscara</strong> é altamente eficaz neste momento</li>
-            </ul>
-          </div>
-
-          <div className="bg-warning/10 p-6 rounded-lg border-l-4 border-warning">
-            <h3 className="text-xl font-semibold text-warning mb-4 flex items-center gap-2">
-              <i className="fas fa-exclamation-triangle"></i>
-              Intubação Orotraqueal (IOT)
-            </h3>
-            <ul className="medical-list">
-              <li><strong className="text-accent">Cautela com a hemodinâmica!</strong></li>
-              <li>Reduzir as doses de indução para mitigar a hipotensão pós-IOT</li>
-              <li><strong>Exemplo prático:</strong> Etomidato 0.15 mg/kg (em vez de 0.3 mg/kg)</li>
-            </ul>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <Card className="p-6 bg-gradient-to-br from-success/10 to-success/5 border-success/30">
-              <div className="text-center">
-                <i className="fas fa-check-circle text-success text-3xl mb-3"></i>
-                <h4 className="font-semibold mb-2">✓ Primeira Escolha</h4>
-                <p>Bolsa-Válvula-Máscara</p>
+        <div className="h-full flex flex-col space-y-8">
+          {/* Layout otimizado para widescreen */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 flex-1">
+            {/* Coluna esquerda - Prioridades e IOT */}
+            <div className="space-y-8">
+              <div className="bg-primary/10 p-8 rounded-lg">
+                <h3 className="text-2xl font-semibold text-primary mb-6 flex items-center gap-3">
+                  <i className="fas fa-lungs text-2xl"></i>
+                  Prioridades Iniciais
+                </h3>
+                <div className="space-y-4">
+                  <div className="bg-white/60 p-4 rounded-lg">
+                    <p className="text-lg"><strong>1º</strong> Estabilização cardiovascular</p>
+                  </div>
+                  <div className="bg-white/60 p-4 rounded-lg">
+                    <p className="text-lg"><strong>2º</strong> Ventilação com bolsa-válvula-máscara</p>
+                  </div>
+                </div>
               </div>
-            </Card>
 
-            <Card className="p-6 bg-gradient-to-br from-warning/10 to-warning/5 border-warning/30">
-              <div className="text-center">
-                <i className="fas fa-procedures text-warning text-3xl mb-3"></i>
-                <h4 className="font-semibold mb-2">⚠️ Com Cautela</h4>
-                <p>IOT com doses reduzidas</p>
+              <div className="bg-warning/10 p-8 rounded-lg border-l-4 border-warning">
+                <h3 className="text-2xl font-semibold text-warning mb-6 flex items-center gap-3">
+                  <i className="fas fa-exclamation-triangle text-2xl"></i>
+                  Intubação (IOT)
+                </h3>
+                <div className="space-y-4">
+                  <div className="bg-accent/20 p-4 rounded-lg">
+                    <p className="text-lg font-bold text-accent text-center">Cautela com hemodinâmica!</p>
+                  </div>
+                  <div className="bg-white/60 p-4 rounded-lg">
+                    <p className="text-base">Reduzir doses de indução</p>
+                    <p className="text-base"><strong>Ex:</strong> Etomidato 0.15 mg/kg</p>
+                  </div>
+                </div>
               </div>
-            </Card>
+            </div>
+
+            {/* Coluna direita - Cards de escolha */}
+            <div className="flex items-center justify-center">
+              <div className="space-y-8 w-full max-w-md">
+                <Card className="p-8 bg-gradient-to-br from-success/15 to-success/5 border-2 border-success/40">
+                  <div className="text-center space-y-4">
+                    <i className="fas fa-check-circle text-success text-6xl"></i>
+                    <h4 className="text-2xl font-bold text-success">✓ Primeira Escolha</h4>
+                    <p className="text-xl">Bolsa-Válvula-Máscara</p>
+                    <div className="bg-success/20 p-3 rounded-lg">
+                      <p className="text-base">Altamente eficaz inicial</p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-8 bg-gradient-to-br from-warning/15 to-warning/5 border-2 border-warning/40">
+                  <div className="text-center space-y-4">
+                    <i className="fas fa-procedures text-warning text-6xl"></i>
+                    <h4 className="text-2xl font-bold text-warning">⚠️ Com Cautela</h4>
+                    <p className="text-xl">IOT com doses reduzidas</p>
+                    <div className="bg-warning/20 p-3 rounded-lg">
+                      <p className="text-base">Mitigar hipotensão</p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </div>
           </div>
         </div>
       ),
@@ -275,40 +382,46 @@ const PowerPointPresentation = () => {
       title: "Fase II - Diagnóstico Etiológico: Os 3 Pilares",
       type: 'content',
       content: (
-        <div className="space-y-8">
-          <div className="bg-accent/10 p-6 rounded-lg text-center border-l-4 border-accent">
-            <p className="text-lg font-medium">
-              Identificar e tratar a causa é a <strong>única forma</strong> de prevenir a recorrência.
-              <br />A investigação deve ser <strong>rápida e direcionada</strong>.
+        <div className="h-full flex flex-col space-y-8">
+          <div className="bg-gradient-to-r from-accent/15 to-primary/10 p-8 rounded-lg text-center border-l-4 border-accent">
+            <p className="text-2xl font-bold mb-4">
+              Identificar e tratar a causa é a <strong className="text-accent">única forma</strong> de prevenir a recorrência
             </p>
+            <p className="text-xl">A investigação deve ser <strong>rápida e direcionada</strong></p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="p-6 text-center bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30 hover:scale-105 transition-transform">
-              <i className="fas fa-heartbeat text-primary text-4xl mb-4"></i>
-              <h3 className="text-xl font-semibold text-primary mb-3">Pilar 1</h3>
-              <h4 className="font-medium text-lg">Eletrocardiograma</h4>
-              <p className="text-sm text-muted-foreground mt-2">(ECG de 12 Derivações)</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-8 flex-1">
+            <Card className="p-8 text-center bg-gradient-to-br from-primary/15 to-primary/5 border-2 border-primary/40 hover:scale-105 transition-transform">
+              <i className="fas fa-heartbeat text-primary text-6xl mb-6"></i>
+              <h3 className="text-2xl font-bold text-primary mb-4">Pilar 1</h3>
+              <h4 className="font-semibold text-xl mb-2">Eletrocardiograma</h4>
+              <div className="bg-primary/20 p-3 rounded-lg">
+                <p className="text-base">(ECG de 12 Derivações)</p>
+              </div>
             </Card>
 
-            <Card className="p-6 text-center bg-gradient-to-br from-success/10 to-success/5 border-success/30 hover:scale-105 transition-transform">
-              <i className="fas fa-flask text-success text-4xl mb-4"></i>
-              <h3 className="text-xl font-semibold text-success mb-3">Pilar 2</h3>
-              <h4 className="font-medium text-lg">Avaliação Laboratorial</h4>
-              <p className="text-sm text-muted-foreground mt-2">Direcionada</p>
+            <Card className="p-8 text-center bg-gradient-to-br from-success/15 to-success/5 border-2 border-success/40 hover:scale-105 transition-transform">
+              <i className="fas fa-flask text-success text-6xl mb-6"></i>
+              <h3 className="text-2xl font-bold text-success mb-4">Pilar 2</h3>
+              <h4 className="font-semibold text-xl mb-2">Avaliação Laboratorial</h4>
+              <div className="bg-success/20 p-3 rounded-lg">
+                <p className="text-base">Direcionada</p>
+              </div>
             </Card>
 
-            <Card className="p-6 text-center bg-gradient-to-br from-warning/10 to-warning/5 border-warning/30 hover:scale-105 transition-transform">
-              <i className="fas fa-x-ray text-warning text-4xl mb-4"></i>
-              <h3 className="text-xl font-semibold text-warning mb-3">Pilar 3</h3>
-              <h4 className="font-medium text-lg">Estratégias de Imagem</h4>
-              <p className="text-sm text-muted-foreground mt-2">US + TC</p>
+            <Card className="p-8 text-center bg-gradient-to-br from-warning/15 to-warning/5 border-2 border-warning/40 hover:scale-105 transition-transform">
+              <i className="fas fa-x-ray text-warning text-6xl mb-6"></i>
+              <h3 className="text-2xl font-bold text-warning mb-4">Pilar 3</h3>
+              <h4 className="font-semibold text-xl mb-2">Estratégias de Imagem</h4>
+              <div className="bg-warning/20 p-3 rounded-lg">
+                <p className="text-base">US + TC</p>
+              </div>
             </Card>
           </div>
 
-          <div className="bg-primary/5 p-4 rounded-lg text-center">
-            <p className="font-medium text-primary">
-              <i className="fas fa-clock mr-2"></i>
+          <div className="bg-gradient-to-r from-primary/20 to-accent/15 p-6 rounded-lg border-2 border-primary/40 text-center">
+            <p className="text-2xl font-bold text-primary">
+              <i className="fas fa-clock mr-3 text-3xl"></i>
               Tempo é neurônio: diagnóstico rápido salva vidas!
             </p>
           </div>
@@ -347,7 +460,7 @@ const PowerPointPresentation = () => {
             <p className="text-lg">Se o paciente estiver <strong>estável</strong>, repetir o ECG em <strong>5-10 minutos</strong>, sem atrasar a consulta com a cardiologia.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 lg:gap-6 mt-8">
             <Card className="p-6 bg-gradient-to-br from-accent/10 to-accent/5 border-accent/30">
               <div className="text-center">
                 <i className="fas fa-clock text-accent text-3xl mb-3"></i>
@@ -427,49 +540,67 @@ const PowerPointPresentation = () => {
       title: "Fase II - Pilar 3: Estratégias de Imagem (se disponíveis)",
       type: 'content',
       content: (
-        <div className="space-y-6">
-          <div className="bg-primary/10 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
-              <i className="fas fa-eye"></i>
-              Ultrassom à Beira-Leito (POCUS)
-            </h3>
-            <p className="mb-4"><strong>Valor inestimável</strong> para diagnóstico rápido de causas reversíveis:</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-accent/10 p-4 rounded text-center">
-                <i className="fas fa-heart text-accent text-2xl mb-2"></i>
-                <p className="font-medium">Tamponamento cardíaco</p>
+        <div className="h-full flex flex-col space-y-8">
+          {/* Layout horizontal otimizado */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 flex-1">
+            {/* Coluna esquerda - POCUS */}
+            <div className="space-y-6">
+              <div className="bg-primary/10 p-8 rounded-lg border-l-4 border-primary">
+                <h3 className="text-2xl font-semibold text-primary mb-6 flex items-center gap-3">
+                  <i className="fas fa-eye text-2xl"></i>
+                  POCUS à Beira-Leito
+                </h3>
+                <p className="text-xl mb-6"><strong>Valor inestimável</strong> para diagnóstico rápido:</p>
+                
+                <div className="space-y-4">
+                  <div className="bg-accent/15 p-4 rounded-lg text-center">
+                    <i className="fas fa-heart text-accent text-3xl mb-2"></i>
+                    <p className="text-lg font-semibold">Tamponamento cardíaco</p>
+                  </div>
+                  <div className="bg-warning/15 p-4 rounded-lg text-center">
+                    <i className="fas fa-lungs text-warning text-3xl mb-2"></i>
+                    <p className="text-lg font-semibold">Embolia pulmonar maciça</p>
+                  </div>
+                  <div className="bg-success/15 p-4 rounded-lg text-center">
+                    <i className="fas fa-tint text-success text-3xl mb-2"></i>
+                    <p className="text-lg font-semibold">Hipovolemia severa</p>
+                  </div>
+                </div>
               </div>
-              <div className="bg-warning/10 p-4 rounded text-center">
-                <i className="fas fa-lungs text-warning text-2xl mb-2"></i>
-                <p className="font-medium">Embolia pulmonar maciça</p>
-              </div>
-              <div className="bg-success/10 p-4 rounded text-center">
-                <i className="fas fa-tint text-success text-2xl mb-2"></i>
-                <p className="font-medium">Hipovolemia severa</p>
+            </div>
+
+            {/* Coluna direita - TC */}
+            <div className="space-y-6">
+              <div className="bg-success/10 p-8 rounded-lg border-l-4 border-success">
+                <h3 className="text-2xl font-semibold text-success mb-6 flex items-center gap-3">
+                  <i className="fas fa-x-ray text-2xl"></i>
+                  TC "Cabeça à Pelve"
+                </h3>
+                <p className="text-xl mb-6">Alto rendimento em <strong>comatosos sem causa óbvia</strong></p>
+                
+                <div className="bg-primary/15 p-6 rounded-lg">
+                  <h4 className="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+                    <i className="fas fa-bullseye"></i>
+                    🎯 Duplo Benefício
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="bg-white/60 p-3 rounded">
+                      <p className="text-base"><strong>Identifica etiologia:</strong> HIC, TEP, Dissecção</p>
+                    </div>
+                    <div className="bg-white/60 p-3 rounded">
+                      <p className="text-base"><strong>Revela complicações:</strong> Pneumotórax, lacerações</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-success/10 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-success mb-4 flex items-center gap-2">
-              <i className="fas fa-x-ray"></i>
-              Tomografia Computadorizada (TC) "da Cabeça à Pelve"
-            </h3>
-            <p className="mb-4">Alto rendimento diagnóstico em pacientes <strong>comatosos sem causa óbvia</strong>.</p>
-            
-            <div className="bg-primary/10 p-4 rounded-lg mb-4">
-              <h4 className="font-semibold text-primary mb-2">🎯 Duplo Benefício:</h4>
-              <ul className="medical-list">
-                <li><strong>Identifica a etiologia</strong> da parada (Hemorragia intracraniana, TEP, Dissecção de Aorta)</li>
-                <li><strong>Revela complicações</strong> da RCP (Pneumotórax, lacerações de órgãos)</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="bg-warning/10 p-4 rounded-lg text-center">
-            <p className="font-medium">
-              <i className="fas fa-stopwatch mr-2"></i>
-              POCUS primeiro → TC se necessário. Tempo é crucial!
+          {/* Mensagem final */}
+          <div className="bg-gradient-to-r from-warning/20 to-accent/15 p-6 rounded-lg border-2 border-warning/40 text-center">
+            <p className="text-2xl font-bold">
+              <i className="fas fa-stopwatch mr-3 text-3xl text-warning"></i>
+              POCUS primeiro → TC se necessário. <span className="text-accent">Tempo é crucial!</span>
             </p>
           </div>
         </div>
@@ -480,35 +611,51 @@ const PowerPointPresentation = () => {
       title: "POCUS - Tamponamento Cardíaco",
       type: 'content',
       content: (
-        <div className="space-y-6">
+        <div className="h-full flex flex-col space-y-8">
+          {/* Header compacto */}
           <div className="bg-accent/10 p-6 rounded-lg border-l-4 border-accent">
-            <h3 className="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
-              <i className="fas fa-heart"></i>
+            <h3 className="text-2xl font-semibold text-accent mb-3 flex items-center gap-3">
+              <i className="fas fa-heart text-3xl"></i>
               Colabamento Diastólico do Ventrículo Direito (VD)
             </h3>
-            <p className="text-lg mb-4">Sinal ultrassonográfico patognomônico de tamponamento cardíaco</p>
+            <p className="text-lg">Sinal ultrassonográfico <strong>patognomônico</strong> de tamponamento cardíaco</p>
           </div>
           
-          <div className="flex justify-center">
-            <div className="bg-white p-4 rounded-lg shadow-lg border">
+          {/* Layout principal: imagem + pontos-chave */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 flex-1">
+            {/* Imagem */}
+            <div className="bg-white p-6 rounded-lg shadow-lg border flex flex-col justify-center">
               <img 
                 src={tamponamentoImg} 
                 alt="Tamponamento cardíaco - Colabamento diastólico do VD" 
-                className="w-full max-w-md rounded-lg"
+                className="w-full rounded-lg max-h-80 object-contain"
               />
-              <p className="text-center text-sm text-muted-foreground mt-2">
+              <p className="text-center text-base text-muted-foreground mt-4 font-medium">
                 Colabamento diastólico do ventrículo direito
               </p>
             </div>
-          </div>
 
-          <div className="bg-primary/10 p-6 rounded-lg">
-            <h4 className="font-semibold text-primary mb-3">📋 Pontos-chave:</h4>
-            <ul className="medical-list">
-              <li>Colabamento do VD durante a diástole</li>
-              <li>Derrame pericárdico com sinais de tamponamento</li>
-              <li>Necessidade de pericardiocentese de emergência</li>
-            </ul>
+            {/* Pontos-chave */}
+            <div className="bg-primary/10 p-8 rounded-lg border border-primary/20 flex flex-col justify-center">
+              <h4 className="font-semibold text-primary mb-6 flex items-center gap-3 text-xl">
+                <i className="fas fa-clipboard-list text-2xl"></i>
+                Pontos-chave
+              </h4>
+              <ul className="medical-list space-y-4">
+                <li className="flex items-start gap-4">
+                  <i className="fas fa-arrow-down text-accent mt-1 text-xl"></i>
+                  <span className="text-lg">Colabamento do VD durante a diástole</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <i className="fas fa-droplet text-primary mt-1 text-xl"></i>
+                  <span className="text-lg">Derrame pericárdico com sinais de tamponamento</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <i className="fas fa-exclamation-triangle text-accent mt-1 text-xl"></i>
+                  <span className="text-lg"><strong>Necessidade de pericardiocentese de emergência</strong></span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       ),
@@ -518,36 +665,55 @@ const PowerPointPresentation = () => {
       title: "POCUS - Embolia Pulmonar Maciça",
       type: 'content',
       content: (
-        <div className="space-y-6">
+        <div className="h-full flex flex-col space-y-8">
+          {/* Header compacto */}
           <div className="bg-warning/10 p-6 rounded-lg border-l-4 border-warning">
-            <h3 className="text-xl font-semibold text-warning mb-4 flex items-center gap-2">
-              <i className="fas fa-lungs"></i>
+            <h3 className="text-2xl font-semibold text-warning mb-3 flex items-center gap-3">
+              <i className="fas fa-lungs text-3xl"></i>
               Sinal D (D-sign) - Sobrecarga de VD
             </h3>
-            <p className="text-lg mb-4">Ventrículo direito com formato em "D" sugere embolia pulmonar maciça</p>
+            <p className="text-lg">Ventrículo direito com formato em <strong>"D"</strong> sugere embolia pulmonar maciça</p>
           </div>
           
-          <div className="flex justify-center">
-            <div className="bg-white p-4 rounded-lg shadow-lg border">
+          {/* Layout principal: imagem + pontos-chave */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 flex-1">
+            {/* Imagem */}
+            <div className="bg-white p-6 rounded-lg shadow-lg border flex flex-col justify-center">
               <img 
                 src={emboliaPulmonarImg} 
                 alt="Embolia pulmonar maciça - Sinal D" 
-                className="w-full max-w-md rounded-lg"
+                className="w-full rounded-lg max-h-80 object-contain"
               />
-              <p className="text-center text-sm text-muted-foreground mt-2">
+              <p className="text-center text-base text-muted-foreground mt-4 font-medium">
                 Sinal D - Sobrecarga aguda do ventrículo direito
               </p>
             </div>
-          </div>
 
-          <div className="bg-primary/10 p-6 rounded-lg">
-            <h4 className="font-semibold text-primary mb-3">📋 Pontos-chave:</h4>
-            <ul className="medical-list">
-              <li>VD dilatado com formato em "D"</li>
-              <li>Septum interventricular retificado</li>
-              <li>Sugestivo de embolia pulmonar maciça</li>
-              <li>Considerar trombolítico de emergência</li>
-            </ul>
+            {/* Pontos-chave */}
+            <div className="bg-primary/10 p-8 rounded-lg border border-primary/20 flex flex-col justify-center">
+              <h4 className="font-semibold text-primary mb-6 flex items-center gap-3 text-xl">
+                <i className="fas fa-clipboard-list text-2xl"></i>
+                Pontos-chave
+              </h4>
+              <ul className="medical-list space-y-4">
+                <li className="flex items-start gap-4">
+                  <i className="fas fa-expand text-warning mt-1 text-xl"></i>
+                  <span className="text-lg">VD dilatado com formato em "D"</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <i className="fas fa-arrows-alt-h text-primary mt-1 text-xl"></i>
+                  <span className="text-lg">Septum interventricular retificado</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <i className="fas fa-lungs text-warning mt-1 text-xl"></i>
+                  <span className="text-lg">Sugestivo de embolia pulmonar maciça</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <i className="fas fa-syringe text-accent mt-1 text-xl"></i>
+                  <span className="text-lg"><strong>Considerar trombolítico de emergência</strong></span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       ),
@@ -557,47 +723,67 @@ const PowerPointPresentation = () => {
       title: "POCUS - Pneumotórax",
       type: 'content',
       content: (
-        <div className="space-y-6">
+        <div className="h-full flex flex-col space-y-8">
+          {/* Header compacto */}
           <div className="bg-success/10 p-6 rounded-lg border-l-4 border-success">
-            <h3 className="text-xl font-semibold text-success mb-4 flex items-center gap-2">
-              <i className="fas fa-lungs"></i>
+            <h3 className="text-2xl font-semibold text-success mb-3 flex items-center gap-3">
+              <i className="fas fa-lungs text-3xl"></i>
               Sinais Ultrassonográficos de Pneumotórax
             </h3>
-            <p className="text-lg mb-4">Ausência de deslizamento pleural e sinais específicos</p>
+            <p className="text-lg">Ausência de deslizamento pleural e <strong>sinais específicos</strong></p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white p-4 rounded-lg shadow-lg border">
+          {/* Layout principal: 3 colunas (2 imagens + pontos-chave) */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-8 flex-1">
+            {/* Imagem 1 */}
+            <div className="bg-white p-6 rounded-lg shadow-lg border flex flex-col justify-center">
               <img 
                 src={pneumotorax1Img} 
                 alt="Pneumotórax - Sinal estratosfera e código de barras" 
-                className="w-full rounded-lg mb-2"
+                className="w-full rounded-lg mb-4 max-h-64 object-contain"
               />
-              <p className="text-center text-sm text-muted-foreground">
+              <p className="text-center text-base text-muted-foreground font-medium">
                 Sinal estratosfera e código de barras
               </p>
             </div>
 
-            <div className="bg-white p-4 rounded-lg shadow-lg border">
+            {/* Imagem 2 */}
+            <div className="bg-white p-6 rounded-lg shadow-lg border flex flex-col justify-center">
               <img 
                 src={pneumotorax2Img} 
                 alt="Pneumotórax - Ausência de deslizamento pleural" 
-                className="w-full rounded-lg mb-2"
+                className="w-full rounded-lg mb-4 max-h-64 object-contain"
               />
-              <p className="text-center text-sm text-muted-foreground">
+              <p className="text-center text-base text-muted-foreground font-medium">
                 Ausência de deslizamento pleural
               </p>
             </div>
-          </div>
 
-          <div className="bg-primary/10 p-6 rounded-lg">
-            <h4 className="font-semibold text-primary mb-3">📋 Pontos-chave:</h4>
-            <ul className="medical-list">
-              <li>Ausência de deslizamento pleural (lung sliding)</li>
-              <li>Sinal estratosfera no modo M</li>
-              <li>Sinal código de barras</li>
-              <li>Necessidade de drenagem torácica de emergência</li>
-            </ul>
+            {/* Pontos-chave */}
+            <div className="bg-primary/10 p-8 rounded-lg border border-primary/20 flex flex-col justify-center">
+              <h4 className="font-semibold text-primary mb-6 flex items-center gap-3 text-xl">
+                <i className="fas fa-clipboard-list text-2xl"></i>
+                Pontos-chave
+              </h4>
+              <ul className="medical-list space-y-4">
+                <li className="flex items-start gap-4">
+                  <i className="fas fa-times text-accent mt-1 text-xl"></i>
+                  <span className="text-lg">Ausência de lung sliding</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <i className="fas fa-wave-square text-success mt-1 text-xl"></i>
+                  <span className="text-lg">Sinal estratosfera</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <i className="fas fa-barcode text-primary mt-1 text-xl"></i>
+                  <span className="text-lg">Sinal código de barras</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <i className="fas fa-exclamation-triangle text-accent mt-1 text-xl"></i>
+                  <span className="text-lg"><strong>Drenagem de emergência</strong></span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       ),
@@ -607,47 +793,67 @@ const PowerPointPresentation = () => {
       title: "POCUS - Hipovolemia",
       type: 'content',
       content: (
-        <div className="space-y-6">
+        <div className="h-full flex flex-col space-y-8">
+          {/* Header compacto */}
           <div className="bg-primary/10 p-6 rounded-lg border-l-4 border-primary">
-            <h3 className="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
-              <i className="fas fa-tint"></i>
+            <h3 className="text-2xl font-semibold text-primary mb-3 flex items-center gap-3">
+              <i className="fas fa-tint text-3xl"></i>
               Avaliação da Volemia pela Ecocardiografia
             </h3>
-            <p className="text-lg mb-4">Ventrículo esquerdo hipercontrátil com cavidade virtual</p>
+            <p className="text-lg">Ventrículo esquerdo <strong>hipercontrátil</strong> com cavidade virtual</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white p-4 rounded-lg shadow-lg border">
+          {/* Layout principal: 3 colunas (2 imagens + pontos-chave) */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-8 flex-1">
+            {/* Imagem 1 */}
+            <div className="bg-white p-6 rounded-lg shadow-lg border flex flex-col justify-center">
               <img 
                 src={hipovolemia1Img} 
                 alt="Hipovolemia - VE hipercontrátil 1" 
-                className="w-full rounded-lg mb-2"
+                className="w-full rounded-lg mb-4 max-h-64 object-contain"
               />
-              <p className="text-center text-sm text-muted-foreground">
-                VE hipercontrátil - vista paraesternal
+              <p className="text-center text-base text-muted-foreground font-medium">
+                VE hipercontrátil - paraesternal
               </p>
             </div>
 
-            <div className="bg-white p-4 rounded-lg shadow-lg border">
+            {/* Imagem 2 */}
+            <div className="bg-white p-6 rounded-lg shadow-lg border flex flex-col justify-center">
               <img 
                 src={hipovolemia2Img} 
                 alt="Hipovolemia - VE hipercontrátil 2" 
-                className="w-full rounded-lg mb-2"
+                className="w-full rounded-lg mb-4 max-h-64 object-contain"
               />
-              <p className="text-center text-sm text-muted-foreground">
-                VE hipercontrátil - vista apical
+              <p className="text-center text-base text-muted-foreground font-medium">
+                VE hipercontrátil - apical
               </p>
             </div>
-          </div>
 
-          <div className="bg-primary/10 p-6 rounded-lg">
-            <h4 className="font-semibold text-primary mb-3">📋 Pontos-chave:</h4>
-            <ul className="medical-list">
-              <li>Ventrículo esquerdo pequeno e hipercontrátil</li>
-              <li>Cavidade virtual ao final da sístole</li>
-              <li>Veia cava inferior colabada</li>
-              <li>Indicação para expansão volêmica imediata</li>
-            </ul>
+            {/* Pontos-chave */}
+            <div className="bg-primary/10 p-8 rounded-lg border border-primary/20 flex flex-col justify-center">
+              <h4 className="font-semibold text-primary mb-6 flex items-center gap-3 text-xl">
+                <i className="fas fa-clipboard-list text-2xl"></i>
+                Pontos-chave
+              </h4>
+              <ul className="medical-list space-y-4">
+                <li className="flex items-start gap-4">
+                  <i className="fas fa-compress text-primary mt-1 text-xl"></i>
+                  <span className="text-lg">VE pequeno e hipercontrátil</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <i className="fas fa-circle text-accent mt-1 text-xl"></i>
+                  <span className="text-lg">Cavidade virtual na sístole</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <i className="fas fa-arrow-down text-primary mt-1 text-xl"></i>
+                  <span className="text-lg">Veia cava inferior colabada</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <i className="fas fa-tint text-success mt-1 text-xl"></i>
+                  <span className="text-lg"><strong>Expansão volêmica imediata</strong></span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       ),
@@ -665,7 +871,7 @@ const PowerPointPresentation = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
             <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30 hover:scale-105 transition-transform">
               <div className="text-center">
                 <i className="fas fa-heartbeat text-primary text-3xl mb-4"></i>
@@ -713,51 +919,78 @@ const PowerPointPresentation = () => {
       title: "Fase III - 4.1 Metas Hemodinâmicas",
       type: 'content',
       content: (
-        <div className="space-y-6">
-          <div className="bg-accent/10 p-6 rounded-lg border-l-4 border-accent">
-            <h3 className="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
-              <i className="fas fa-exclamation-triangle"></i>
-              Problema Central
-            </h3>
-            <p className="text-lg">A <strong>autorregulação vascular cerebral</strong> está comprometida. O fluxo sanguíneo cerebral depende <strong>diretamente</strong> da pressão arterial.</p>
-          </div>
+        <div className="space-y-4">
+          {/* Layout principal: 2 colunas em widescreen */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6">
+            {/* Coluna esquerda: Problema + Estratégia */}
+            <div className="space-y-4">
+              <div className="bg-accent/10 p-4 rounded-lg border-l-4 border-accent">
+                <h3 className="text-lg font-semibold text-accent mb-2 flex items-center gap-2">
+                  <i className="fas fa-exclamation-triangle"></i>
+                  Problema Central
+                </h3>
+                <p className="text-sm">A <strong>autorregulação vascular cerebral</strong> está comprometida. O fluxo sanguíneo cerebral depende <strong>diretamente</strong> da pressão arterial.</p>
+              </div>
 
-          <div className="bg-primary/10 p-8 rounded-lg text-center border-2 border-primary/50">
-            <h3 className="text-2xl font-bold text-primary mb-4 flex items-center justify-center gap-2">
-              <i className="fas fa-quote-left"></i>
-              Mensagem Clínica Central
-            </h3>
-            <p className="text-xl font-medium">
-              Uma PAM de <strong className="text-accent">65 mmHg</strong> deve ser vista como um <strong>PISO</strong>, não como um <strong>ALVO</strong>.
-            </p>
-          </div>
-
-          <div className="bg-success/10 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-success mb-4 flex items-center gap-2">
-              <i className="fas fa-target"></i>
-              Estratégia
-            </h3>
-            <ul className="medical-list">
-              <li>Almejar uma PAM entre <strong>80-100 mmHg</strong> pode ser benéfico para otimizar a perfusão cerebral</li>
-              <li className="text-lg font-medium text-accent">A conclusão prática é: <strong>EVITAR A HIPOTENSÃO A TODO CUSTO</strong></li>
-            </ul>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-            <div className="text-center p-6 bg-accent/5 rounded-lg border border-accent/30">
-              <i className="fas fa-arrow-down text-accent text-3xl mb-2"></i>
-              <div className="text-2xl font-bold text-accent">65 mmHg</div>
-              <div className="text-sm">PISO (Mínimo)</div>
+              <div className="bg-success/10 p-4 rounded-lg border-l-4 border-success">
+                <h3 className="text-lg font-semibold text-success mb-2 flex items-center gap-2">
+                  <i className="fas fa-target"></i>
+                  Estratégia
+                </h3>
+                <ul className="medical-list text-sm space-y-1">
+                  <li>PAM entre <strong>80-100 mmHg</strong> para perfusão cerebral</li>
+                  <li className="font-medium text-accent"><strong>EVITAR HIPOTENSÃO A TODO CUSTO</strong></li>
+                </ul>
+              </div>
             </div>
-            <div className="text-center p-6 bg-success/5 rounded-lg border border-success/30">
-              <i className="fas fa-bullseye text-success text-3xl mb-2"></i>
-              <div className="text-2xl font-bold text-success">80-100</div>
-              <div className="text-sm">ALVO Ideal</div>
+
+            {/* Coluna direita: Mensagem central */}
+            <div className="bg-gradient-to-br from-primary/15 to-accent/10 p-6 rounded-lg border-2 border-primary/30">
+              <h3 className="text-lg font-bold text-primary mb-3 flex items-center justify-center gap-2">
+                <i className="fas fa-quote-left"></i>
+                Mensagem Clínica Central
+              </h3>
+              <div className="text-center space-y-3">
+                <p className="text-base font-medium">
+                  PAM <strong className="text-accent">65 mmHg</strong> = <strong>PISO</strong>
+                </p>
+                <p className="text-base font-medium">
+                  não <strong>ALVO</strong>
+                </p>
+                <div className="bg-white/50 p-3 rounded-lg">
+                  <div className="text-2xl font-bold text-primary">80-100 mmHg</div>
+                  <div className="text-sm text-muted-foreground">Meta Ideal</div>
+                </div>
+              </div>
             </div>
-            <div className="text-center p-6 bg-primary/5 rounded-lg border border-primary/30">
-              <i className="fas fa-brain text-primary text-3xl mb-2"></i>
-              <div className="text-2xl font-bold text-primary">Cérebro</div>
-              <div className="text-sm">Prioridade #1</div>
+          </div>
+
+          {/* Indicadores visuais compactos */}
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-3">
+            <div className="text-center p-4 bg-accent/5 rounded-lg border border-accent/30">
+              <i className="fas fa-arrow-down text-accent text-2xl mb-1"></i>
+              <div className="text-xl font-bold text-accent">65</div>
+              <div className="text-xs">PISO</div>
+            </div>
+            <div className="text-center p-4 bg-success/5 rounded-lg border border-success/30">
+              <i className="fas fa-bullseye text-success text-2xl mb-1"></i>
+              <div className="text-xl font-bold text-success">80-100</div>
+              <div className="text-xs">ALVO</div>
+            </div>
+            <div className="text-center p-4 bg-primary/5 rounded-lg border border-primary/30">
+              <i className="fas fa-brain text-primary text-2xl mb-1"></i>
+              <div className="text-lg font-bold text-primary">Cérebro</div>
+              <div className="text-xs">Prioridade</div>
+            </div>
+            <div className="text-center p-4 bg-warning/5 rounded-lg border border-warning/30">
+              <i className="fas fa-heartbeat text-warning text-2xl mb-1"></i>
+              <div className="text-lg font-bold text-warning">PAM</div>
+              <div className="text-xs">Monitorar</div>
+            </div>
+            <div className="text-center p-4 bg-accent/5 rounded-lg border border-accent/30">
+              <i className="fas fa-ban text-accent text-2xl mb-1"></i>
+              <div className="text-lg font-bold text-accent">Anti-</div>
+              <div className="text-xs">Hipotensão</div>
             </div>
           </div>
         </div>
@@ -831,57 +1064,77 @@ const PowerPointPresentation = () => {
       title: "Fase III - 4.3 Controle de Temperatura: Uma Mudança de Paradigma",
       type: 'content',
       content: (
-        <div className="space-y-6">
-          <div className="bg-primary/10 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
+        <div className="space-y-4">
+          {/* Header compacto */}
+          <div className="bg-gradient-to-r from-primary/15 to-accent/10 p-4 rounded-lg border-l-4 border-primary">
+            <h3 className="text-lg font-semibold text-primary mb-2 flex items-center gap-2">
               <i className="fas fa-thermometer-half"></i>
-              Recomendação Atual (AHA 2023)
+              AHA 2023: Mudança de Paradigma
             </h3>
-            <p className="text-lg">Manter uma temperatura corporal <strong>constante</strong> entre <strong className="text-success">32°C e 37,5°C</strong>.</p>
+            <p className="text-base">Temperatura <strong>constante</strong> entre <strong className="text-success">32°C - 37,5°C</strong></p>
           </div>
 
-          <div className="bg-success/10 p-6 rounded-lg border-l-4 border-success">
-            <h3 className="text-xl font-semibold text-success mb-4 flex items-center gap-2">
-              <i className="fas fa-lightbulb"></i>
-              O Principal Benefício
-            </h3>
-            <p className="text-lg">Não vem da <strong>hipotermia</strong> em si, mas da <strong className="text-accent">PREVENÇÃO ATIVA E METICULOSA DA FEBRE</strong>.</p>
-          </div>
-
-          <div className="bg-warning/10 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-warning mb-4 flex items-center gap-2">
-              <i className="fas fa-cogs"></i>
-              Essência da Prática
-            </h3>
-            <ul className="medical-list">
-              <li>Utilizar <strong>dispositivos de controle de temperatura</strong></li>
-              <li>Garantir <strong>sedação adequada</strong> e, se necessário, <strong>bloqueio neuromuscular</strong> para suprimir tremores</li>
-            </ul>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-            <div className="text-center p-6 bg-primary/5 rounded-lg border border-primary/30">
-              <i className="fas fa-snowflake text-primary text-3xl mb-2"></i>
-              <div className="text-xl font-bold text-primary">32°C</div>
-              <div className="text-sm">Limite Inferior</div>
+          {/* Layout principal: 2 colunas */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+            {/* Benefício principal */}
+            <div className="bg-success/10 p-4 rounded-lg border border-success/20">
+              <h4 className="text-base font-semibold text-success mb-2 flex items-center gap-2">
+                <i className="fas fa-lightbulb"></i>
+                Principal Benefício
+              </h4>
+              <p className="text-sm">Não a <strong>hipotermia</strong>, mas a <strong className="text-accent">PREVENÇÃO ATIVA DA FEBRE</strong></p>
             </div>
-            <div className="text-center p-6 bg-success/5 rounded-lg border border-success/30">
-              <i className="fas fa-thermometer-half text-success text-3xl mb-2"></i>
-              <div className="text-xl font-bold text-success">Controle</div>
-              <div className="text-sm">Ativo e Preciso</div>
+
+            {/* Prática essencial */}
+            <div className="bg-warning/10 p-4 rounded-lg border border-warning/20">
+              <h4 className="text-base font-semibold text-warning mb-2 flex items-center gap-2">
+                <i className="fas fa-cogs"></i>
+                Essência da Prática
+              </h4>
+              <ul className="text-sm space-y-1">
+                <li>• Dispositivos de controle</li>
+                <li>• Sedação adequada</li>
+                <li>• Bloqueio neuromuscular</li>
+              </ul>
             </div>
-            <div className="text-center p-6 bg-warning/5 rounded-lg border border-warning/30">
-              <i className="fas fa-fire text-warning text-3xl mb-2"></i>
-              <div className="text-xl font-bold text-warning">37,5°C</div>
-              <div className="text-sm">Limite Superior</div>
+
+            {/* Conceito chave */}
+            <div className="bg-accent/10 p-4 rounded-lg border border-accent/20 lg:col-span-2 xl:col-span-1">
+              <div className="text-center">
+                <i className="fas fa-ban text-accent text-2xl mb-2"></i>
+                <div className="font-bold text-accent text-base">FEBRE</div>
+                <div className="text-sm text-muted-foreground">Inimigo do cérebro</div>
+              </div>
             </div>
           </div>
 
-          <div className="bg-accent/10 p-4 rounded-lg text-center">
-            <p className="font-medium text-accent">
-              <i className="fas fa-ban mr-2"></i>
-              FEBRE = INIMIGO DO CÉREBRO!
-            </p>
+          {/* Indicadores de temperatura - compactos */}
+          <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 gap-3">
+            <div className="text-center p-3 bg-primary/5 rounded-lg border border-primary/30">
+              <i className="fas fa-snowflake text-primary text-xl mb-1"></i>
+              <div className="text-lg font-bold text-primary">32°C</div>
+              <div className="text-xs">Mínimo</div>
+            </div>
+            <div className="text-center p-3 bg-success/5 rounded-lg border border-success/30">
+              <i className="fas fa-thermometer-half text-success text-xl mb-1"></i>
+              <div className="text-base font-bold text-success">Controle</div>
+              <div className="text-xs">Ativo</div>
+            </div>
+            <div className="text-center p-3 bg-primary/5 rounded-lg border border-primary/30">
+              <i className="fas fa-brain text-primary text-xl mb-1"></i>
+              <div className="text-base font-bold text-primary">Cérebro</div>
+              <div className="text-xs">Protegido</div>
+            </div>
+            <div className="text-center p-3 bg-warning/5 rounded-lg border border-warning/30">
+              <i className="fas fa-fire text-warning text-xl mb-1"></i>
+              <div className="text-lg font-bold text-warning">37,5°C</div>
+              <div className="text-xs">Máximo</div>
+            </div>
+            <div className="text-center p-3 bg-accent/5 rounded-lg border border-accent/30">
+              <i className="fas fa-ban text-accent text-xl mb-1"></i>
+              <div className="text-base font-bold text-accent">Anti-</div>
+              <div className="text-xs">Febre</div>
+            </div>
           </div>
         </div>
       ),
@@ -891,63 +1144,94 @@ const PowerPointPresentation = () => {
       title: "Fase III - 4.4 Manejo de Convulsões e Sedação",
       type: 'content',
       content: (
-        <div className="space-y-6">
-          <div className="bg-accent/10 p-6 rounded-lg border-l-4 border-accent">
-            <h3 className="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
-              <i className="fas fa-chart-line"></i>
-              Incidência
-            </h3>
-            <p className="text-lg">Ocorrem em até <strong>36%</strong> dos pacientes e indicam <strong>lesão cerebral grave</strong>.</p>
-          </div>
-
-          <div className="bg-primary/10 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
-              <i className="fas fa-brain"></i>
-              Monitorização (Recomendação Clara)
-            </h3>
-            <p className="text-lg mb-3"><strong>Eletroencefalograma (EEG) contínuo</strong> para <strong className="text-accent">TODOS</strong> os pacientes comatosos após PCR.</p>
-            <p className="text-base">É a <strong>única forma</strong> de detectar o estado de mal epiléptico não convulsivo.</p>
-          </div>
-
-          <div className="bg-success/10 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-success mb-4 flex items-center gap-2">
-              <i className="fas fa-pills"></i>
-              Tratamento e Sedação
-            </h3>
-            <ul className="medical-list">
-              <li>Considerar ensaio terapêutico com <strong>anticonvulsivante não sedativo</strong></li>
-              <li>Priorizar sedativos de <strong>curta ação</strong> (Propofol, Fentanil) para facilitar a avaliação neurológica</li>
-            </ul>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <Card className="p-6 bg-gradient-to-br from-accent/10 to-accent/5 border-accent/30">
-              <div className="text-center">
-                <i className="fas fa-percentage text-accent text-3xl mb-3"></i>
-                <h4 className="font-semibold mb-2 text-accent">36%</h4>
-                <p>Incidência de Convulsões</p>
+        <div className="space-y-4">
+          {/* Header com estatística principal */}
+          <div className="bg-gradient-to-r from-accent/15 to-primary/10 p-4 rounded-lg border-l-4 border-accent">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-semibold text-accent mb-1 flex items-center gap-2">
+                  <i className="fas fa-chart-line"></i>
+                  Convulsões Pós-PCR
+                </h3>
+                <p className="text-sm">Até <strong>36%</strong> dos pacientes • Indicam lesão cerebral grave</p>
               </div>
-            </Card>
-
-            <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30">
-              <div className="text-center">
-                <i className="fas fa-chart-line text-primary text-3xl mb-3"></i>
-                <h4 className="font-semibold mb-2 text-primary">EEG</h4>
-                <p>Contínuo para TODOS</p>
+              <div className="text-center bg-white/30 p-3 rounded-lg">
+                <div className="text-2xl font-bold text-accent">36%</div>
+                <div className="text-xs">Incidência</div>
               </div>
-            </Card>
-
-            <Card className="p-6 bg-gradient-to-br from-success/10 to-success/5 border-success/30">
-              <div className="text-center">
-                <i className="fas fa-clock text-success text-3xl mb-3"></i>
-                <h4 className="font-semibold mb-2 text-success">Curta Ação</h4>
-                <p>Propofol + Fentanil</p>
-              </div>
-            </Card>
+            </div>
           </div>
 
-          <div className="bg-warning/10 p-4 rounded-lg text-center">
-            <p className="font-medium text-warning">
+          {/* Layout principal: 2 colunas */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4">
+            {/* Monitorização */}
+            <div className="bg-primary/10 p-4 rounded-lg border border-primary/20">
+              <h4 className="text-base font-semibold text-primary mb-3 flex items-center gap-2">
+                <i className="fas fa-brain"></i>
+                Monitorização Obrigatória
+              </h4>
+              <div className="space-y-2">
+                <div className="bg-white/50 p-3 rounded">
+                  <div className="flex items-center gap-2 mb-1">
+                    <i className="fas fa-chart-line text-primary"></i>
+                    <span className="font-medium text-sm">EEG Contínuo</span>
+                  </div>
+                  <p className="text-xs">Para <strong>TODOS</strong> os comatosos</p>
+                </div>
+                <div className="bg-accent/20 p-2 rounded">
+                  <p className="text-xs"><strong>Única forma</strong> de detectar estado de mal não convulsivo</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Tratamento */}
+            <div className="bg-success/10 p-4 rounded-lg border border-success/20">
+              <h4 className="text-base font-semibold text-success mb-3 flex items-center gap-2">
+                <i className="fas fa-pills"></i>
+                Tratamento & Sedação
+              </h4>
+              <div className="space-y-2">
+                <div className="bg-white/50 p-2 rounded">
+                  <p className="text-xs">• Anticonvulsivante <strong>não sedativo</strong></p>
+                </div>
+                <div className="bg-white/50 p-2 rounded">
+                  <p className="text-xs">• Sedativos <strong>curta ação</strong></p>
+                  <p className="text-xs font-medium">Propofol + Fentanil</p>
+                </div>
+                <div className="bg-success/20 p-2 rounded">
+                  <p className="text-xs">Facilita avaliação neurológica</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Indicadores compactos */}
+          <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-3">
+            <div className="text-center p-3 bg-accent/5 rounded-lg border border-accent/30">
+              <i className="fas fa-percentage text-accent text-xl mb-1"></i>
+              <div className="text-lg font-bold text-accent">36%</div>
+              <div className="text-xs">Incidência</div>
+            </div>
+            <div className="text-center p-3 bg-primary/5 rounded-lg border border-primary/30">
+              <i className="fas fa-chart-line text-primary text-xl mb-1"></i>
+              <div className="text-base font-bold text-primary">EEG</div>
+              <div className="text-xs">Contínuo</div>
+            </div>
+            <div className="text-center p-3 bg-success/5 rounded-lg border border-success/30">
+              <i className="fas fa-pills text-success text-xl mb-1"></i>
+              <div className="text-base font-bold text-success">Não-Sed</div>
+              <div className="text-xs">Anticonv.</div>
+            </div>
+            <div className="text-center p-3 bg-warning/5 rounded-lg border border-warning/30">
+              <i className="fas fa-clock text-warning text-xl mb-1"></i>
+              <div className="text-base font-bold text-warning">Curta</div>
+              <div className="text-xs">Ação</div>
+            </div>
+          </div>
+
+          {/* Alerta final */}
+          <div className="bg-gradient-to-r from-warning/20 to-accent/15 p-3 rounded-lg border border-warning/30">
+            <p className="text-center font-medium text-accent text-sm">
               <i className="fas fa-eye mr-2"></i>
               O que não vemos pode estar matando o cérebro!
             </p>
@@ -1125,47 +1409,50 @@ const PowerPointPresentation = () => {
       title: "Conclusão",
       type: 'conclusion',
       content: (
-        <div className="space-y-8 text-center">
+        <div className="h-full flex flex-col justify-center space-y-8 text-center p-8">
+          {/* Mensagem principal */}
           <div className="bg-gradient-to-r from-primary/20 to-success/20 p-12 rounded-lg border-2 border-primary/30">
-            <h3 className="text-3xl font-bold text-primary mb-6">
-              <i className="fas fa-medal mr-3"></i>
+            <h3 className="text-4xl font-bold text-primary mb-6">
+              <i className="fas fa-medal mr-4 text-5xl"></i>
               Excelência nos Cuidados
             </h3>
-            <p className="text-xl leading-relaxed">
+            <p className="text-2xl leading-relaxed">
               A excelência nos cuidados pós-parada cardiorrespiratória é a disciplina que, 
               <strong className="text-accent"> elo por elo</strong>, transforma a sobrevivência em uma 
               <strong className="text-success"> vida com propósito e qualidade</strong>.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="p-6 bg-primary/5 rounded-lg">
-              <i className="fas fa-heartbeat text-primary text-3xl mb-3"></i>
-              <h4 className="font-semibold">Estabilização</h4>
-              <p className="text-sm">Imediata e eficaz</p>
+          {/* Cards dos pilares */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="p-8 bg-primary/10 rounded-lg border border-primary/20">
+              <i className="fas fa-heartbeat text-primary text-5xl mb-4"></i>
+              <h4 className="font-semibold text-xl text-primary mb-2">Estabilização</h4>
+              <p className="text-lg">Imediata e eficaz</p>
             </div>
-            <div className="p-6 bg-success/5 rounded-lg">
-              <i className="fas fa-search text-success text-3xl mb-3"></i>
-              <h4 className="font-semibold">Diagnóstico</h4>
-              <p className="text-sm">Rápido e direcionado</p>
+            <div className="p-8 bg-success/10 rounded-lg border border-success/20">
+              <i className="fas fa-search text-success text-5xl mb-4"></i>
+              <h4 className="font-semibold text-xl text-success mb-2">Diagnóstico</h4>
+              <p className="text-lg">Rápido e direcionado</p>
             </div>
-            <div className="p-6 bg-warning/5 rounded-lg">
-              <i className="fas fa-brain text-warning text-3xl mb-3"></i>
-              <h4 className="font-semibold">Proteção</h4>
-              <p className="text-sm">Neurológica ativa</p>
+            <div className="p-8 bg-warning/10 rounded-lg border border-warning/20">
+              <i className="fas fa-brain text-warning text-5xl mb-4"></i>
+              <h4 className="font-semibold text-xl text-warning mb-2">Proteção</h4>
+              <p className="text-lg">Neurológica ativa</p>
             </div>
-            <div className="p-6 bg-accent/5 rounded-lg">
-              <i className="fas fa-trophy text-accent text-3xl mb-3"></i>
-              <h4 className="font-semibold">Recuperação</h4>
-              <p className="text-sm">Com qualidade</p>
+            <div className="p-8 bg-accent/10 rounded-lg border border-accent/20">
+              <i className="fas fa-trophy text-accent text-5xl mb-4"></i>
+              <h4 className="font-semibold text-xl text-accent mb-2">Recuperação</h4>
+              <p className="text-lg">Com qualidade</p>
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-success/10 to-primary/10 p-6 rounded-lg">
-            <p className="text-lg font-medium">
-              <i className="fas fa-quote-left mr-2"></i>
+          {/* Citação final */}
+          <div className="bg-gradient-to-r from-success/10 to-primary/10 p-8 rounded-lg border border-success/20">
+            <p className="text-xl font-medium">
+              <i className="fas fa-quote-left mr-3 text-2xl"></i>
               Cada vida salva é uma vitória da medicina baseada em evidência
-              <i className="fas fa-quote-right ml-2"></i>
+              <i className="fas fa-quote-right ml-3 text-2xl"></i>
             </p>
           </div>
         </div>
@@ -1176,66 +1463,68 @@ const PowerPointPresentation = () => {
       title: "DOSES PRÁTICAS - Sequência Rápida de Intubação (SRI)",
       type: 'table',
       content: (
-        <div className="space-y-6">
-          <div className="bg-primary/10 p-6 rounded-lg text-center">
-            <h3 className="text-xl font-semibold text-primary mb-4 flex items-center justify-center gap-2">
-              <i className="fas fa-syringe"></i>
-              💉 Indução + bloqueio neuromuscular
+        <div className="h-full flex flex-col space-y-8 p-8">
+          {/* Header */}
+          <div className="bg-primary/10 p-6 rounded-lg text-center border border-primary/20">
+            <h3 className="text-2xl font-semibold text-primary mb-4 flex items-center justify-center gap-3">
+              <i className="fas fa-syringe text-3xl"></i>
+              Indução + Bloqueio Neuromuscular
             </h3>
           </div>
           
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse bg-white rounded-lg shadow-lg">
+          {/* Tabela responsiva */}
+          <div className="overflow-x-auto flex-1">
+            <table className="w-full border-collapse bg-white rounded-lg shadow-lg text-base">
               <thead>
                 <tr className="bg-primary text-primary-foreground">
-                  <th className="border border-primary/30 p-3 text-left">Droga</th>
-                  <th className="border border-primary/30 p-3 text-center">Dose (mg/kg)</th>
-                  <th className="border border-primary/30 p-3 text-center">50 kg</th>
-                  <th className="border border-primary/30 p-3 text-center">75 kg</th>
-                  <th className="border border-primary/30 p-3 text-center">100 kg</th>
-                  <th className="border border-primary/30 p-3 text-center">Obs.</th>
+                  <th className="border border-primary/30 p-4 text-left font-semibold">Droga</th>
+                  <th className="border border-primary/30 p-4 text-center font-semibold">Dose (mg/kg)</th>
+                  <th className="border border-primary/30 p-4 text-center font-semibold">50 kg</th>
+                  <th className="border border-primary/30 p-4 text-center font-semibold">75 kg</th>
+                  <th className="border border-primary/30 p-4 text-center font-semibold">100 kg</th>
+                  <th className="border border-primary/30 p-4 text-center font-semibold">Obs.</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-3 font-medium">Etomidato 2 mg/mL</td>
-                  <td className="border border-gray-300 p-3 text-center">0,3 mg/kg</td>
-                  <td className="border border-gray-300 p-3 text-center">15 mg = 7,5 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">22,5 mg = 11,2 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">30 mg = 15 mL</td>
-                  <td className="border border-gray-300 p-3 text-center text-success">Estável hemodinamicamente</td>
+                  <td className="border border-gray-300 p-4 font-medium text-base">Etomidato 2 mg/mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">0,3 mg/kg</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">15 mg = 7,5 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">22,5 mg = 11,2 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">30 mg = 15 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-success font-medium">Estável hemodinamicamente</td>
                 </tr>
                 <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-3 font-medium">Propofol 10 mg/mL</td>
-                  <td className="border border-gray-300 p-3 text-center">2 mg/kg</td>
-                  <td className="border border-gray-300 p-3 text-center">100 mg = 10 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">150 mg = 15 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">200 mg = 20 mL</td>
-                  <td className="border border-gray-300 p-3 text-center text-accent">⚠️ Hipotensão</td>
+                  <td className="border border-gray-300 p-4 font-medium text-base">Propofol 10 mg/mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">2 mg/kg</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">100 mg = 10 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">150 mg = 15 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">200 mg = 20 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-accent font-medium">⚠️ Hipotensão</td>
                 </tr>
                 <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-3 font-medium">Midazolam 5 mg/mL</td>
-                  <td className="border border-gray-300 p-3 text-center">0,3 mg/kg</td>
-                  <td className="border border-gray-300 p-3 text-center">15 mg = 3 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">22,5 mg = 4,5 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">30 mg = 6 mL</td>
-                  <td className="border border-gray-300 p-3 text-center text-primary">Sedação / crises</td>
+                  <td className="border border-gray-300 p-4 font-medium text-base">Midazolam 5 mg/mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">0,3 mg/kg</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">15 mg = 3 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">22,5 mg = 4,5 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">30 mg = 6 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-primary font-medium">Sedação / crises</td>
                 </tr>
                 <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-3 font-medium">Fentanil 50 µg/mL</td>
-                  <td className="border border-gray-300 p-3 text-center">2 µg/kg</td>
-                  <td className="border border-gray-300 p-3 text-center">100 µg = 2 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">150 µg = 3 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">200 µg = 4 mL</td>
-                  <td className="border border-gray-300 p-3 text-center text-accent">⚠️ Depressão resp., rigidez</td>
+                  <td className="border border-gray-300 p-4 font-medium text-base">Fentanil 50 µg/mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">2 µg/kg</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">100 µg = 2 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">150 µg = 3 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">200 µg = 4 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-accent font-medium">⚠️ Depressão resp., rigidez</td>
                 </tr>
                 <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-3 font-medium">Succinilcolina 10 mg/mL</td>
-                  <td className="border border-gray-300 p-3 text-center">1,5 mg/kg</td>
-                  <td className="border border-gray-300 p-3 text-center">75 mg = 7,5 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">112 mg = 11,2 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">150 mg = 15 mL</td>
-                  <td className="border border-gray-300 p-3 text-center text-accent">⚠️ CI: hiperK+, queimados</td>
+                  <td className="border border-gray-300 p-4 font-medium text-base">Succinilcolina 10 mg/mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">1,5 mg/kg</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">75 mg = 7,5 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">112 mg = 11,2 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">150 mg = 15 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-accent font-medium">⚠️ CI: hiperK+, queimados</td>
                 </tr>
               </tbody>
             </table>
@@ -1248,59 +1537,68 @@ const PowerPointPresentation = () => {
       title: "DOSES PRÁTICAS - Sedoanalgesia e Antiepilépticos (pós-IOT)",
       type: 'table',
       content: (
-        <div className="space-y-6">
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse bg-white rounded-lg shadow-lg">
+        <div className="h-full flex flex-col space-y-8 p-8">
+          {/* Header */}
+          <div className="bg-success/10 p-6 rounded-lg text-center border border-success/20">
+            <h3 className="text-2xl font-semibold text-success mb-4 flex items-center justify-center gap-3">
+              <i className="fas fa-pills text-3xl"></i>
+              Sedoanalgesia e Antiepilépticos (pós-IOT)
+            </h3>
+          </div>
+          
+          {/* Tabela responsiva */}
+          <div className="overflow-x-auto flex-1">
+            <table className="w-full border-collapse bg-white rounded-lg shadow-lg text-base">
               <thead>
                 <tr className="bg-success text-success-foreground">
-                  <th className="border border-success/30 p-3 text-left">Droga</th>
-                  <th className="border border-success/30 p-3 text-center">Dose (mg/kg)</th>
-                  <th className="border border-success/30 p-3 text-center">50 kg</th>
-                  <th className="border border-success/30 p-3 text-center">75 kg</th>
-                  <th className="border border-success/30 p-3 text-center">100 kg</th>
-                  <th className="border border-success/30 p-3 text-center">Obs.</th>
+                  <th className="border border-success/30 p-4 text-left font-semibold">Droga</th>
+                  <th className="border border-success/30 p-4 text-center font-semibold">Dose (mg/kg)</th>
+                  <th className="border border-success/30 p-4 text-center font-semibold">50 kg</th>
+                  <th className="border border-success/30 p-4 text-center font-semibold">75 kg</th>
+                  <th className="border border-success/30 p-4 text-center font-semibold">100 kg</th>
+                  <th className="border border-success/30 p-4 text-center font-semibold">Obs.</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-3 font-medium">Midazolam 5 mg/mL</td>
-                  <td className="border border-gray-300 p-3 text-center">0,1 mg/kg (bolus)</td>
-                  <td className="border border-gray-300 p-3 text-center">5 mg = 1 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">7,5 mg = 1,5 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">10 mg = 2 mL</td>
-                  <td className="border border-gray-300 p-3 text-center text-primary">Infusão 0,05–2 µg/kg/min</td>
+                  <td className="border border-gray-300 p-4 font-medium text-base">Midazolam 5 mg/mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">0,1 mg/kg (bolus)</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">5 mg = 1 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">7,5 mg = 1,5 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">10 mg = 2 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-primary font-medium">Infusão 0,05–2 µg/kg/min</td>
                 </tr>
                 <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-3 font-medium">Propofol 10 mg/mL</td>
-                  <td className="border border-gray-300 p-3 text-center">1 mg/kg (bolus)</td>
-                  <td className="border border-gray-300 p-3 text-center">50 mg = 5 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">75 mg = 7,5 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">100 mg = 10 mL</td>
-                  <td className="border border-gray-300 p-3 text-center text-primary">Infusão 1–5 mg/kg/h</td>
+                  <td className="border border-gray-300 p-4 font-medium text-base">Propofol 10 mg/mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">1 mg/kg (bolus)</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">50 mg = 5 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">75 mg = 7,5 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">100 mg = 10 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-primary font-medium">Infusão 1–5 mg/kg/h</td>
                 </tr>
                 <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-3 font-medium">Fentanil 50 µg/mL</td>
-                  <td className="border border-gray-300 p-3 text-center">1 µg/kg (bolus)</td>
-                  <td className="border border-gray-300 p-3 text-center">50 µg = 1 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">75 µg = 1,5 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">100 µg = 2 mL</td>
-                  <td className="border border-gray-300 p-3 text-center text-primary">Infusão 1–3 µg/kg/h</td>
+                  <td className="border border-gray-300 p-4 font-medium text-base">Fentanil 50 µg/mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">1 µg/kg (bolus)</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">50 µg = 1 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">75 µg = 1,5 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">100 µg = 2 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-primary font-medium">Infusão 1–3 µg/kg/h</td>
                 </tr>
                 <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-3 font-medium">Levetiracetam 100 mg/mL</td>
-                  <td className="border border-gray-300 p-3 text-center">60 mg/kg (máx 4,5 g)</td>
-                  <td className="border border-gray-300 p-3 text-center">3.000 mg = 30 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">4.500 mg = 45 mL (dose teto)</td>
-                  <td className="border border-gray-300 p-3 text-center">6.000 mg → limitar a 4.500 mg (45 mL)</td>
-                  <td className="border border-gray-300 p-3 text-center text-success">Infundir em 15 min</td>
+                  <td className="border border-gray-300 p-4 font-medium text-base">Levetiracetam 100 mg/mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">60 mg/kg (máx 4,5 g)</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">3.000 mg = 30 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">4.500 mg = 45 mL (dose teto)</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">6.000 mg → limitar a 4.500 mg (45 mL)</td>
+                  <td className="border border-gray-300 p-4 text-center text-success font-medium">Infundir em 15 min</td>
                 </tr>
                 <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-3 font-medium">Fenitoína 50 mg/mL</td>
-                  <td className="border border-gray-300 p-3 text-center">15 mg/kg</td>
-                  <td className="border border-gray-300 p-3 text-center">750 mg = 15 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">1125 mg = 22,5 mL</td>
-                  <td className="border border-gray-300 p-3 text-center">1500 mg = 30 mL</td>
-                  <td className="border border-gray-300 p-3 text-center text-accent">Máx 50 mg/min, monitorizar ECG</td>
+                  <td className="border border-gray-300 p-4 font-medium text-base">Fenitoína 50 mg/mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">15 mg/kg</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">750 mg = 15 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">1125 mg = 22,5 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-base">1500 mg = 30 mL</td>
+                  <td className="border border-gray-300 p-4 text-center text-accent font-medium">Máx 50 mg/min, monitorizar ECG</td>
                 </tr>
               </tbody>
             </table>
@@ -1313,50 +1611,51 @@ const PowerPointPresentation = () => {
       title: "DOSES PRÁTICAS - Resumo Executivo",
       type: 'content',
       content: (
-        <div className="space-y-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30">
-              <h3 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
-                <i className="fas fa-bolt"></i>
+        <div className="h-full flex flex-col space-y-8 p-8">
+          {/* Grid de cards principais */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 flex-1">
+            <Card className="p-8 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30 flex flex-col justify-center">
+              <h3 className="text-xl font-semibold text-primary mb-6 flex items-center gap-3">
+                <i className="fas fa-bolt text-2xl"></i>
                 IOT Emergência
               </h3>
-              <ul className="medical-list text-sm">
+              <ul className="medical-list text-lg space-y-3">
                 <li><strong>Etomidato:</strong> 0,3 mg/kg (primeira escolha)</li>
                 <li><strong>Succinilcolina:</strong> 1,5 mg/kg</li>
                 <li><strong>⚠️ Reduzir doses</strong> se instabilidade hemodinâmica</li>
               </ul>
             </Card>
 
-            <Card className="p-6 bg-gradient-to-br from-success/10 to-success/5 border-success/30">
-              <h3 className="text-lg font-semibold text-success mb-4 flex items-center gap-2">
-                <i className="fas fa-pills"></i>
+            <Card className="p-8 bg-gradient-to-br from-success/10 to-success/5 border-success/30 flex flex-col justify-center">
+              <h3 className="text-xl font-semibold text-success mb-6 flex items-center gap-3">
+                <i className="fas fa-pills text-2xl"></i>
                 Sedação Pós-IOT
               </h3>
-              <ul className="medical-list text-sm">
+              <ul className="medical-list text-lg space-y-3">
                 <li><strong>Midazolam:</strong> 0,1 mg/kg bolus</li>
                 <li><strong>Fentanil:</strong> 1 µg/kg bolus</li>
                 <li>Infusão contínua conforme necessário</li>
               </ul>
             </Card>
 
-            <Card className="p-6 bg-gradient-to-br from-accent/10 to-accent/5 border-accent/30">
-              <h3 className="text-lg font-semibold text-accent mb-4 flex items-center gap-2">
-                <i className="fas fa-brain"></i>
+            <Card className="p-8 bg-gradient-to-br from-accent/10 to-accent/5 border-accent/30 flex flex-col justify-center">
+              <h3 className="text-xl font-semibold text-accent mb-6 flex items-center gap-3">
+                <i className="fas fa-brain text-2xl"></i>
                 Anticonvulsivantes
               </h3>
-              <ul className="medical-list text-sm">
+              <ul className="medical-list text-lg space-y-3">
                 <li><strong>Levetiracetam:</strong> 60 mg/kg (máx 4,5g)</li>
                 <li><strong>Fenitoína:</strong> 15 mg/kg</li>
                 <li>EEG contínuo é mandatório</li>
               </ul>
             </Card>
 
-            <Card className="p-6 bg-gradient-to-br from-warning/10 to-warning/5 border-warning/30">
-              <h3 className="text-lg font-semibold text-warning mb-4 flex items-center gap-2">
-                <i className="fas fa-exclamation-triangle"></i>
+            <Card className="p-8 bg-gradient-to-br from-warning/10 to-warning/5 border-warning/30 flex flex-col justify-center">
+              <h3 className="text-xl font-semibold text-warning mb-6 flex items-center gap-3">
+                <i className="fas fa-exclamation-triangle text-2xl"></i>
                 Pontos Críticos
               </h3>
-              <ul className="medical-list text-sm">
+              <ul className="medical-list text-lg space-y-3">
                 <li>Sempre <strong>calcular</strong> a dose pelo peso</li>
                 <li><strong>Monitorização</strong> hemodinâmica contínua</li>
                 <li>Ter <strong>antidotos</strong> sempre disponíveis</li>
@@ -1364,9 +1663,10 @@ const PowerPointPresentation = () => {
             </Card>
           </div>
 
-          <div className="bg-primary/10 p-6 rounded-lg text-center">
-            <p className="text-lg font-medium text-primary">
-              <i className="fas fa-clipboard-check mr-2"></i>
+          {/* Mensagem final */}
+          <div className="bg-primary/10 p-8 rounded-lg text-center border border-primary/20">
+            <p className="text-xl font-medium text-primary">
+              <i className="fas fa-clipboard-check mr-3 text-2xl"></i>
               Doses calculadas para facilitar a prática clínica. Sempre considere o contexto individual do paciente.
             </p>
           </div>
@@ -1379,26 +1679,29 @@ const PowerPointPresentation = () => {
       subtitle: "Dúvidas?",
       type: 'title',
       content: (
-        <div className="text-center space-y-12">
-          <div className="text-8xl mb-8">
+        <div className="h-full flex flex-col justify-center items-center text-center space-y-12">
+          {/* Ícone principal */}
+          <div className="text-9xl mb-8">
             <i className="fas fa-heart text-accent animate-pulse"></i>
           </div>
           
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-primary">
-              <i className="fas fa-question-circle mr-3"></i>
+          {/* Conteúdo central */}
+          <div className="space-y-8">
+            <h3 className="text-4xl font-semibold text-primary">
+              <i className="fas fa-question-circle mr-4 text-5xl"></i>
               Momento para Discussão
             </h3>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-2xl text-muted-foreground max-w-4xl">
               Compartilhe suas experiências e esclareça suas dúvidas sobre os cuidados pós-PCR
             </p>
           </div>
 
-          <div className="flex justify-center items-center gap-8 mt-12">
-            <i className="fas fa-stethoscope text-primary text-4xl"></i>
-            <i className="fas fa-brain text-success text-4xl"></i>
-            <i className="fas fa-heartbeat text-accent text-4xl"></i>
-            <i className="fas fa-users text-warning text-4xl"></i>
+          {/* Ícones finais */}
+          <div className="flex justify-center items-center gap-12 mt-12">
+            <i className="fas fa-stethoscope text-primary text-6xl"></i>
+            <i className="fas fa-brain text-success text-6xl"></i>
+            <i className="fas fa-heartbeat text-accent text-6xl"></i>
+            <i className="fas fa-users text-warning text-6xl"></i>
           </div>
 
           <div className="bg-gradient-to-r from-primary/10 to-success/10 p-6 rounded-lg">
@@ -1465,8 +1768,8 @@ const PowerPointPresentation = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-muted/30 to-secondary/20 flex flex-col">
       {/* Header with navigation */}
-      <header className="bg-card shadow-md border-b p-4">
-        <div className="container mx-auto flex items-center justify-between">
+      <header className="bg-card shadow-md border-b px-4 py-3">
+        <div className="w-full max-w-[95vw] mx-auto flex items-center justify-between">
           <div className="flex items-center gap-4">
             <i className="fas fa-heart-pulse text-primary text-2xl"></i>
             <h1 className="text-xl font-bold text-primary">Cuidados Pós-PCR</h1>
@@ -1503,26 +1806,28 @@ const PowerPointPresentation = () => {
       </header>
 
       {/* Main slide content */}
-      <main className="flex-1 p-6">
-        <div className="container mx-auto max-w-6xl h-full">
-          <Card className={`slide-container h-full p-8 ${isTransitioning ? 'opacity-50' : 'opacity-100'} transition-opacity duration-200`}>
+      <main className="flex-1 px-4 py-4">
+        <div className="w-full max-w-[95vw] mx-auto h-full">
+          <Card className={`slide-container h-full px-8 py-6 ${isTransitioning ? 'opacity-50' : 'opacity-100'} transition-opacity duration-200`}>
             <div className="h-full flex flex-col">
               {/* Slide header */}
-              <div className="text-center mb-8 border-b border-border pb-6">
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">
+              <div className="text-center mb-6 border-b border-border pb-4">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-2">
                   {currentSlideData.title}
                 </h2>
                 {currentSlideData.subtitle && (
-                  <p className="text-xl text-muted-foreground">{currentSlideData.subtitle}</p>
+                  <p className="text-lg md:text-xl text-muted-foreground">{currentSlideData.subtitle}</p>
                 )}
-                <div className="mt-4 flex justify-center">
+                <div className="mt-3 flex justify-center">
                   <div className="h-1 w-24 bg-gradient-to-r from-primary to-success rounded"></div>
                 </div>
               </div>
 
               {/* Slide content */}
               <div className="flex-1 overflow-y-auto">
-                {currentSlideData.content}
+                <div className="w-full max-w-none">
+                  {currentSlideData.content}
+                </div>
               </div>
             </div>
           </Card>
@@ -1530,9 +1835,9 @@ const PowerPointPresentation = () => {
       </main>
 
       {/* Footer with slide navigation dots */}
-      <footer className="bg-card border-t p-4">
-        <div className="container mx-auto flex justify-center">
-          <div className="flex gap-2 max-w-full overflow-x-auto pb-2">
+      <footer className="bg-card border-t px-4 py-3">
+        <div className="w-full max-w-[95vw] mx-auto flex justify-center">
+          <div className="flex gap-2 max-w-full overflow-x-auto pb-1">
             {slides.map((_, index) => (
               <button
                 key={index}
