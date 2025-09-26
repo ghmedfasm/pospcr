@@ -390,14 +390,29 @@ const PowerPointPresentation = () => {
 
             {/* Coluna direita - Cards de escolha */}
             <div className="flex items-center justify-center">
-              <div className="space-y-8 w-full max-w-md">
+              <div className="space-y-6 w-full max-w-md">
                 <Card className="p-8 bg-gradient-to-br from-success/15 to-success/5 border-2 border-success/40">
                   <div className="text-center space-y-4">
                     <i className="fas fa-check-circle text-success text-6xl"></i>
                     <h4 className="text-2xl font-bold text-success">✓ Primeira Escolha</h4>
-                    <p className="text-xl">Bolsa-Válvula-Máscara</p>
+                    <div className="space-y-2">
+                      <p className="text-lg font-semibold">Opções:</p>
+                      <p className="text-base">• Bolsa-Válvula-Máscara</p>
+                      <p className="text-base">• Máscara Laríngea</p>
+                    </div>
                     <div className="bg-success/20 p-3 rounded-lg">
-                      <p className="text-base">Altamente eficaz inicial</p>
+                      <p className="text-base">Lembre, o paciente não está em parada, faça a indução para realizar a intubação</p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-8 bg-gradient-to-br from-primary/15 to-primary/5 border-2 border-primary/40">
+                  <div className="text-center space-y-4">
+                    <i className="fas fa-syringe text-primary text-6xl"></i>
+                    <h4 className="text-2xl font-bold text-primary">Indução Segura</h4>
+                    <div className="bg-primary/20 p-4 rounded-lg text-left space-y-2">
+                      <p className="text-base">• <strong>Fentanil</strong> apenas em casos selecionados</p>
+                      <p className="text-base">• <strong>Induzir</strong> com Drogas Cardioestáveis</p>
                     </div>
                   </div>
                 </Card>
@@ -555,7 +570,7 @@ const PowerPointPresentation = () => {
               <div className="space-y-3">
                 <p className="text-lg">Nível inicial e <strong>clearance</strong> (depuração) de lactato são marcadores prognósticos</p>
                 <div className="bg-success/20 p-3 rounded-lg">
-                  <p className="text-base font-medium">SVD &gt; 0,5ml/kg/min</p>
+                  <p className="text-base font-medium">Sondagem Vesical - Avalia perfusão &gt; 0,5ml/kg/min</p>
                 </div>
               </div>
             </Card>
@@ -612,30 +627,27 @@ const PowerPointPresentation = () => {
                     <i className="fas fa-tint text-success text-3xl mb-2"></i>
                     <p className="text-lg font-semibold">Hipovolemia severa</p>
                   </div>
+                  <div className="bg-primary/15 p-4 rounded-lg text-center">
+                    <i className="fas fa-wind text-primary text-3xl mb-2"></i>
+                    <p className="text-lg font-semibold">Pneumotórax</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Coluna direita - TC */}
+            {/* Coluna direita - Outros Métodos */}
             <div className="space-y-6">
               <div className="bg-success/10 p-8 rounded-lg border-l-4 border-success">
                 <h3 className="text-2xl font-semibold text-success mb-6 flex items-center gap-3">
-                  <i className="fas fa-x-ray text-2xl"></i>
-                  TC "Cabeça à Pelve"
+                  <i className="fas fa-clipboard-check text-2xl"></i>
+                  Outros Métodos
                 </h3>
-                <p className="text-xl mb-6">Alto rendimento em <strong>comatosos sem causa óbvia</strong></p>
-                
-                <div className="bg-primary/15 p-6 rounded-lg">
-                  <h4 className="text-xl font-bold text-primary mb-4 flex items-center gap-2">
-                    <i className="fas fa-bullseye"></i>
-                    🎯 Duplo Benefício
-                  </h4>
-                  <div className="space-y-3">
-                    <div className="bg-white/60 p-3 rounded">
-                      <p className="text-base"><strong>Identifica etiologia:</strong> HIC, TEP, Dissecção</p>
-                    </div>
-                    <div className="bg-white/60 p-3 rounded">
-                      <p className="text-base"><strong>Revela complicações:</strong> Pneumotórax, lacerações</p>
+                <div className="space-y-4">
+                  <div className="bg-white/60 p-4 rounded-lg">
+                    <p className="text-lg font-semibold text-success mb-3">Guiar pela clínica do paciente</p>
+                    <div className="space-y-2">
+                      <p className="text-base"><strong>Ex:</strong> TEP → AngioTC Protocolo TEP</p>
+                      <p className="text-base">Aneurisma de Aorta → AngioTC de Aorta</p>
                     </div>
                   </div>
                 </div>
@@ -663,7 +675,7 @@ const PowerPointPresentation = () => {
           <div className="bg-accent/10 p-6 rounded-lg border-l-4 border-accent">
             <h3 className="text-2xl font-semibold text-accent mb-3 flex items-center gap-3">
               <i className="fas fa-heart text-3xl"></i>
-              Colabamento Diastólico do Ventrículo Direito (VD)
+              PLAX - Colabamento diastólico do ventrículo direito (Tamponamento)
             </h3>
             <p className="text-lg">Sinal ultrassonográfico <strong>patognomônico</strong> de tamponamento cardíaco</p>
           </div>
@@ -1191,97 +1203,108 @@ const PowerPointPresentation = () => {
       title: "Fase III - 4.4 Manejo de Convulsões e Sedação",
       type: 'content',
       content: (
-        <div className="space-y-4">
-          {/* Header com estatística principal */}
-          <div className="bg-gradient-to-r from-accent/15 to-primary/10 p-4 rounded-lg border-l-4 border-accent">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-lg font-semibold text-accent mb-1 flex items-center gap-2">
-                  <i className="fas fa-chart-line"></i>
-                  Convulsões Pós-PCR
-                </h3>
-                <p className="text-sm">Até <strong>36%</strong> dos pacientes • Indicam lesão cerebral grave</p>
+        <div className="space-y-8">
+          {/* Cards principais lado a lado - Convulsões e TC */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6">
+            {/* Card esquerdo - Convulsões Pós-PCR */}
+            <Card className="p-6 bg-gradient-to-br from-accent/15 to-accent/5 border-2 border-accent/40 h-fit">
+              <div className="text-center space-y-3">
+                <i className="fas fa-chart-line text-accent text-4xl mb-3"></i>
+                <h3 className="text-xl font-bold text-accent mb-3">Convulsões Pós-PCR</h3>
+                
+                <div className="space-y-3">
+                  <div className="bg-white/60 p-3 rounded-lg">
+                    <div className="text-3xl font-bold text-accent mb-1">36%</div>
+                    <div className="text-base font-semibold">Incidência</div>
+                  </div>
+                  
+                  <div className="bg-accent/20 p-2 rounded-lg">
+                    <p className="text-sm font-medium">Até 36% dos pacientes</p>
+                    <p className="text-sm">• Indicam lesão cerebral grave</p>
+                  </div>
+                </div>
               </div>
-              <div className="text-center bg-white/30 p-3 rounded-lg">
-                <div className="text-2xl font-bold text-accent">36%</div>
-                <div className="text-xs">Incidência</div>
+            </Card>
+
+            {/* Card direito - TC de Crânio */}
+            <Card className="p-6 bg-gradient-to-br from-primary/15 to-primary/5 border-2 border-primary/40 h-fit">
+              <div className="text-center space-y-3">
+                <i className="fas fa-x-ray text-primary text-4xl mb-3"></i>
+                <h3 className="text-xl font-bold text-primary mb-3">TC de Crânio</h3>
+                
+                <div className="space-y-3">
+                  <div className="bg-white/60 p-3 rounded-lg">
+                    <div className="text-3xl font-bold text-primary mb-1">24h</div>
+                    <div className="text-base font-semibold">Prazo</div>
+                  </div>
+                  
+                  <div className="bg-primary/20 p-2 rounded-lg">
+                    <p className="text-sm font-medium">TC de Crânio com 24hrs</p>
+                    <p className="text-sm">Avaliação neurológica essencial</p>
+                  </div>
+                </div>
               </div>
-            </div>
+            </Card>
           </div>
 
-          {/* Layout principal: 2 colunas */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4">
+          {/* Layout principal: 2 colunas - Monitorização e Tratamento */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6">
             {/* Monitorização */}
-            <div className="bg-primary/10 p-4 rounded-lg border border-primary/20">
-              <h4 className="text-base font-semibold text-primary mb-3 flex items-center gap-2">
+            <div className="bg-primary/10 p-6 rounded-lg border border-primary/20">
+              <h4 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
                 <i className="fas fa-brain"></i>
                 Monitorização Obrigatória
               </h4>
-              <div className="space-y-2">
-                <div className="bg-white/50 p-3 rounded">
+              <div className="space-y-3">
+                <div className="bg-white/60 p-3 rounded-lg">
                   <div className="flex items-center gap-2 mb-1">
                     <i className="fas fa-chart-line text-primary"></i>
-                    <span className="font-medium text-sm">EEG Contínuo</span>
+                    <span className="font-bold text-lg text-primary">EEG</span>
                   </div>
-                  <p className="text-xs">Para <strong>TODOS</strong> os comatosos</p>
+                  <p className="text-sm">Para <strong>TODOS</strong> os comatosos</p>
                 </div>
-                <div className="bg-accent/20 p-2 rounded">
-                  <p className="text-xs"><strong>Única forma</strong> de detectar estado de mal não convulsivo</p>
+                <div className="bg-accent/20 p-3 rounded-lg">
+                  <p className="text-sm font-medium"><strong>Única forma</strong> de detectar estado de mal não convulsivo</p>
                 </div>
               </div>
             </div>
 
             {/* Tratamento */}
-            <div className="bg-success/10 p-4 rounded-lg border border-success/20">
-              <h4 className="text-base font-semibold text-success mb-3 flex items-center gap-2">
+            <div className="bg-success/10 p-6 rounded-lg border border-success/20">
+              <h4 className="text-lg font-semibold text-success mb-4 flex items-center gap-2">
                 <i className="fas fa-pills"></i>
                 Tratamento & Sedação
               </h4>
-              <div className="space-y-2">
-                <div className="bg-white/50 p-2 rounded">
-                  <p className="text-xs">• Anticonvulsivante <strong>não sedativo</strong></p>
+              <div className="space-y-3">
+                <div className="bg-white/60 p-3 rounded-lg">
+                  <p className="text-sm">• Sedativos <strong>curta ação</strong></p>
+                  <p className="text-sm font-medium ml-3">→ Propofol + Fentanil</p>
+                  <p className="text-sm font-medium ml-3">→ Facilita Avaliação Neurológica</p>
                 </div>
-                <div className="bg-white/50 p-2 rounded">
-                  <p className="text-xs">• Sedativos <strong>curta ação</strong></p>
-                  <p className="text-xs font-medium">Propofol + Fentanil</p>
-                </div>
-                <div className="bg-success/20 p-2 rounded">
-                  <p className="text-xs">Facilita avaliação neurológica</p>
+                <div className="bg-white/60 p-3 rounded-lg">
+                  <p className="text-sm">• Anticonvulsivante <strong>não sedativo</strong></p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Indicadores compactos */}
-          <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-3">
-            <div className="text-center p-3 bg-accent/5 rounded-lg border border-accent/30">
-              <i className="fas fa-percentage text-accent text-xl mb-1"></i>
-              <div className="text-lg font-bold text-accent">36%</div>
-              <div className="text-xs">Incidência</div>
-            </div>
-            <div className="text-center p-3 bg-primary/5 rounded-lg border border-primary/30">
-              <i className="fas fa-chart-line text-primary text-xl mb-1"></i>
-              <div className="text-base font-bold text-primary">EEG</div>
-              <div className="text-xs">Contínuo</div>
-            </div>
-            <div className="text-center p-3 bg-success/5 rounded-lg border border-success/30">
-              <i className="fas fa-pills text-success text-xl mb-1"></i>
-              <div className="text-base font-bold text-success">Não-Sed</div>
-              <div className="text-xs">Anticonv.</div>
-            </div>
-            <div className="text-center p-3 bg-warning/5 rounded-lg border border-warning/30">
-              <i className="fas fa-clock text-warning text-xl mb-1"></i>
-              <div className="text-base font-bold text-warning">Curta</div>
-              <div className="text-xs">Ação</div>
-            </div>
-          </div>
+          {/* Cards finais lado a lado */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6">
+            <Card className="p-6 bg-gradient-to-br from-warning/15 to-accent/10 border-2 border-warning/40">
+              <div className="text-center">
+                <i className="fas fa-eye text-warning text-4xl mb-3"></i>
+                <h4 className="text-lg font-bold text-accent mb-2">⚠️ Perigo Invisível</h4>
+                <p className="text-base font-medium">O que não vemos pode estar matando o cérebro!</p>
+              </div>
+            </Card>
 
-          {/* Alerta final */}
-          <div className="bg-gradient-to-r from-warning/20 to-accent/15 p-3 rounded-lg border border-warning/30">
-            <p className="text-center font-medium text-accent text-sm">
-              <i className="fas fa-eye mr-2"></i>
-              O que não vemos pode estar matando o cérebro!
-            </p>
+            <Card className="p-6 bg-gradient-to-br from-success/15 to-primary/10 border-2 border-success/40">
+              <div className="text-center">
+                <i className="fas fa-ban text-success text-4xl mb-3"></i>
+                <h4 className="text-lg font-bold text-success mb-2">✓ Sem Profilaxia</h4>
+                <p className="text-base font-medium">Não há indicação de profilaxia</p>
+              </div>
+            </Card>
           </div>
         </div>
       ),
@@ -1291,29 +1314,45 @@ const PowerPointPresentation = () => {
       title: "Angiografia Coronária: Quando e Para Quem?",
       type: 'content',
       content: (
-        <div className="space-y-6">
+        <div className="space-y-8">
           <p className="text-lg text-center bg-primary/10 p-4 rounded-lg">
             A indicação de <strong>cateterismo cardíaco (CATE)</strong> de emergência evoluiu com base em evidências de alta qualidade.
           </p>
 
-          <div className="bg-success/10 p-6 rounded-lg border-l-4 border-success">
-            <h3 className="text-xl font-semibold text-success mb-4 flex items-center gap-2">
-              <i className="fas fa-check-circle"></i>
-              INDICAÇÃO CLARA para CATE de Emergência
-            </h3>
-            <ul className="medical-list">
-              <li><strong>IAMCSST</strong> no ECG pós-RCE</li>
-              <li><strong>Choque cardiogênico</strong> persistente</li>
-              <li><strong>Instabilidade elétrica</strong> (TV/FV recorrente)</li>
-            </ul>
-          </div>
+          {/* Cards principais lado a lado */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+            {/* INDICAÇÃO CLARA */}
+            <div className="bg-success/10 p-8 rounded-lg border-l-4 border-success">
+              <h3 className="text-xl font-semibold text-success mb-6 flex items-center gap-3">
+                <i className="fas fa-check-circle text-2xl"></i>
+                INDICAÇÃO CLARA para CATE de Emergência
+              </h3>
+              <ul className="medical-list space-y-4">
+                <li className="flex items-center gap-3">
+                  <i className="fas fa-heartbeat text-success"></i>
+                  <span><strong>IAMCSST</strong> no ECG pós-RCE</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <i className="fas fa-exclamation-triangle text-success"></i>
+                  <span><strong>Choque cardiogênico</strong> persistente</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <i className="fas fa-bolt text-success"></i>
+                  <span><strong>Instabilidade elétrica</strong> (TV/FV recorrente)</span>
+                </li>
+              </ul>
+            </div>
 
-          <div className="bg-accent/10 p-6 rounded-lg border-l-4 border-accent">
-            <h3 className="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
-              <i className="fas fa-times-circle"></i>
-              NÃO RECOMENDADO DE ROTINA
-            </h3>
-            <p className="text-lg">Para pacientes <strong>sem IAMCSST</strong> e <strong>hemodinamicamente estáveis</strong>.</p>
+            {/* NÃO RECOMENDADO */}
+            <div className="bg-accent/10 p-8 rounded-lg border-l-4 border-accent">
+              <h3 className="text-xl font-semibold text-accent mb-6 flex items-center gap-3">
+                <i className="fas fa-times-circle text-2xl"></i>
+                NÃO RECOMENDADO DE ROTINA
+              </h3>
+              <div className="bg-white/40 p-6 rounded-lg">
+                <p className="text-lg">Para pacientes <strong>sem IAMCSST</strong> e <strong>hemodinamicamente estáveis</strong>.</p>
+              </div>
+            </div>
           </div>
 
           <div className="bg-primary/10 p-8 rounded-lg text-center border-2 border-primary/50">
@@ -1326,7 +1365,7 @@ const PowerPointPresentation = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="p-6 bg-gradient-to-br from-success/10 to-success/5 border-success/30">
               <div className="text-center">
                 <i className="fas fa-heart text-success text-3xl mb-3"></i>
@@ -1510,68 +1549,136 @@ const PowerPointPresentation = () => {
       title: "DOSES PRÁTICAS - Sequência Rápida de Intubação (SRI)",
       type: 'table',
       content: (
-        <div className="h-full flex flex-col space-y-8 p-8">
-          {/* Header */}
-          <div className="bg-primary/10 p-6 rounded-lg text-center border border-primary/20">
-            <h3 className="text-2xl font-semibold text-primary mb-4 flex items-center justify-center gap-3">
-              <i className="fas fa-syringe text-3xl"></i>
+        <div className="h-full flex flex-col space-y-4">
+          {/* Header compacto para widescreen */}
+          <div className="bg-primary/10 p-3 rounded-lg text-center border border-primary/20">
+            <h3 className="text-xl font-semibold text-primary flex items-center justify-center gap-2">
+              <i className="fas fa-syringe text-xl"></i>
               Indução + Bloqueio Neuromuscular
             </h3>
           </div>
           
-          {/* Tabela responsiva */}
+          {/* Tabela responsiva otimizada para widescreen */}
           <div className="overflow-x-auto flex-1">
-            <table className="w-full border-collapse bg-white rounded-lg shadow-lg text-base">
+            <table className="w-full border-collapse bg-white rounded-lg shadow-lg text-sm">
               <thead>
                 <tr className="bg-primary text-primary-foreground">
-                  <th className="border border-primary/30 p-4 text-left font-semibold">Droga</th>
-                  <th className="border border-primary/30 p-4 text-center font-semibold">Dose (mg/kg)</th>
-                  <th className="border border-primary/30 p-4 text-center font-semibold">50 kg</th>
-                  <th className="border border-primary/30 p-4 text-center font-semibold">75 kg</th>
-                  <th className="border border-primary/30 p-4 text-center font-semibold">100 kg</th>
-                  <th className="border border-primary/30 p-4 text-center font-semibold">Obs.</th>
+                  <th className="border border-primary/30 p-2 text-left font-semibold text-xs">Droga (Apresentação/Concentração)</th>
+                  <th className="border border-primary/30 p-2 text-center font-semibold text-xs">Dose (mg/kg ou µg/kg)</th>
+                  <th className="border border-primary/30 p-2 text-center font-semibold text-xs">50 kg (Volume)</th>
+                  <th className="border border-primary/30 p-2 text-center font-semibold text-xs">75 kg (Volume)</th>
+                  <th className="border border-primary/30 p-2 text-center font-semibold text-xs">100 kg (Volume)</th>
+                  <th className="border border-primary/30 p-2 text-center font-semibold text-xs">Obs. (Ordem de Uso, Início de Ação e Prioridade)</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-4 font-medium text-base">Etomidato 2 mg/mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">0,3 mg/kg</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">15 mg = 7,5 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">22,5 mg = 11,2 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">30 mg = 15 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-success font-medium">Estável hemodinamicamente</td>
+                {/* PRÉ-MEDICAÇÃO */}
+                <tr className="bg-blue-100/60">
+                  <td colSpan={6} className="border border-gray-300 p-2 text-center font-bold text-blue-800 bg-blue-200/60 text-sm">
+                    PRÉ-MEDICAÇÃO
+                  </td>
                 </tr>
                 <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-4 font-medium text-base">Propofol 10 mg/mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">2 mg/kg</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">100 mg = 10 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">150 mg = 15 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">200 mg = 20 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-accent font-medium">⚠️ Hipotensão</td>
+                  <td className="border border-gray-300 p-2 font-medium text-xs">1. Fentanil (50 µg/mL)</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">3 µg/kg EV</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">150 µg = 3 mL</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">225 µg = 4,5 mL</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">300 µg = 6 mL</td>
+                  <td className="border border-gray-300 p-2 text-xs">
+                    <strong className="text-blue-700">PRÉ-MEDICAÇÃO. Uso Criterioso/Restrito</strong><br/>
+                    • Administrar 3-5 minutos antes da indução. Risco de Hipotensão e Rigidez Torácica (se infundido rápido). Início de Ação: 120 a 180 s (2-3 min)
+                  </td>
                 </tr>
                 <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-4 font-medium text-base">Midazolam 5 mg/mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">0,3 mg/kg</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">15 mg = 3 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">22,5 mg = 4,5 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">30 mg = 6 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-primary font-medium">Sedação / crises</td>
+                  <td className="border border-gray-300 p-2 font-medium text-xs">Lidocaína</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">1,5 mg/kg IV</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">75 mg</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">112,5 mg</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">150 mg</td>
+                  <td className="border border-gray-300 p-2 text-xs">
+                    <strong className="text-blue-700">PRÉ-MEDICAÇÃO. Considerar em pacientes com exacerbação de asma</strong><br/>
+                    • Administrar 3 minutos antes da indução hipnótica. Início de Ação: 120 a 180 s (2-3 min)
+                  </td>
+                </tr>
+
+                {/* INDUÇÃO */}
+                <tr className="bg-green-100/60">
+                  <td colSpan={6} className="border border-gray-300 p-2 text-center font-bold text-green-800 bg-green-200/60 text-sm">
+                    INDUÇÃO
+                  </td>
                 </tr>
                 <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-4 font-medium text-base">Fentanil 50 µg/mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">2 µg/kg</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">100 µg = 2 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">150 µg = 3 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">200 µg = 4 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-accent font-medium">⚠️ Depressão resp., rigidez</td>
+                  <td className="border border-gray-300 p-2 font-medium text-xs">2. Etomidato (2 mg/mL)</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">0,3 mg/kg EV</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">15 mg = 7,5 mL</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">22,5 mg = 11,25 mL</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">30 mg = 15 mL</td>
+                  <td className="border border-gray-300 p-2 text-xs">
+                    <strong className="text-green-700">INDUÇÃO (1ª Escolha). Agente cardio-estável</strong><br/>
+                    • Prioridade em instabilidade hemodinâmica. Reduzir 50% no choque. Início de Ação: &lt; 1 min (15-45 s)
+                  </td>
                 </tr>
                 <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-4 font-medium text-base">Succinilcolina 10 mg/mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">1,5 mg/kg</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">75 mg = 7,5 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">112 mg = 11,2 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">150 mg = 15 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-accent font-medium">⚠️ CI: hiperK+, queimados</td>
+                  <td className="border border-gray-300 p-2 font-medium text-xs">Quetamina (50 mg/mL)</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">1-2 mg/kg EV</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">50-100 mg = 1-2 mL</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">75-150 mg = 1,5-3 mL</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">100-200 mg = 2-4 mL</td>
+                  <td className="border border-gray-300 p-2 text-xs">
+                    <strong className="text-orange-600">INDUÇÃO (Alta Prioridade). Boa opção para pacientes em choque ou broncoespasmo</strong><br/>
+                    • Início de Ação: &lt; 30 s
+                  </td>
+                </tr>
+                <tr className="hover:bg-accent/5">
+                  <td className="border border-gray-300 p-2 font-medium text-xs">Propofol (10 mg/mL)</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">1,5-2 mg/kg EV</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">75-100 mg = 7,5-10 mL</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">112,5-150 mg = 11,25-15 mL</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">150-200 mg = 15-20 mL</td>
+                  <td className="border border-gray-300 p-2 text-xs">
+                    <strong className="text-red-600">INDUÇÃO (Risco de Hipotensão). Associado à hipotensão grave</strong><br/>
+                    • Reduzir 50% no choque. Início de Ação: 15-45 s
+                  </td>
+                </tr>
+                <tr className="hover:bg-accent/5">
+                  <td className="border border-gray-300 p-2 font-medium text-xs">Midazolam (5 mg/mL)</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">0,3 mg/kg EV</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">15 mg = 3 mL</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">22,5 mg = 4,5 mL</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">30 mg = 6 mL</td>
+                  <td className="border border-gray-300 p-2 text-xs">
+                    <strong className="text-gray-600">INDUÇÃO (Não Recomendado para SRI). Evitar devido ao lento início de ação</strong><br/>
+                    • Deve ser usado apenas se as outras drogas estiverem indisponíveis. Início de Ação: 120 a 150 s (2-2,5 min)
+                  </td>
+                </tr>
+
+                {/* BLOQUEIO NEUROMUSCULAR */}
+                <tr className="bg-red-100/60">
+                  <td colSpan={6} className="border border-gray-300 p-2 text-center font-bold text-red-800 bg-red-200/60 text-sm">
+                    BLOQUEIO NEUROMUSCULAR
+                  </td>
+                </tr>
+                <tr className="hover:bg-accent/5">
+                  <td className="border border-gray-300 p-2 font-medium text-xs">3. Succinilcolina (10 mg/mL)</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">1,5 mg/kg EV</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">75 mg = 7,5 mL</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">112,5 mg = 11,25 mL</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">150 mg = 15 mL</td>
+                  <td className="border border-gray-300 p-2 text-xs">
+                    <strong className="text-red-700">BLOQUEIO NEUROMUSCULAR (BNM). BNM de ação mais rápida</strong><br/>
+                    • Início de Ação: &lt; 60 s. Observar Contraindicações (p. ex., hipercalemia, queimaduras)
+                  </td>
+                </tr>
+                <tr className="hover:bg-accent/5">
+                  <td className="border border-gray-300 p-2 font-medium text-xs">Rocurônio (10 mg/mL)</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">1,2 mg/kg EV</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">60 mg = 6 mL</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">90 mg = 9 mL</td>
+                  <td className="border border-gray-300 p-2 text-center text-xs">120 mg = 12 mL</td>
+                  <td className="border border-gray-300 p-2 text-xs">
+                    <strong className="text-blue-700">BLOQUEIO NEUROMUSCULAR (Alternativa). Perfil de segurança favorável</strong><br/>
+                    • Início de Ação: &lt; 120 s. Duração de ação prolongada (40-60 min), requerendo sedação contínua imediata.
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -1584,138 +1691,221 @@ const PowerPointPresentation = () => {
       title: "DOSES PRÁTICAS - Sedoanalgesia e Antiepilépticos (pós-IOT)",
       type: 'table',
       content: (
-        <div className="h-full flex flex-col space-y-8 p-8">
-          {/* Header */}
-          <div className="bg-success/10 p-6 rounded-lg text-center border border-success/20">
-            <h3 className="text-2xl font-semibold text-success mb-4 flex items-center justify-center gap-3">
-              <i className="fas fa-pills text-3xl"></i>
+        <div className="h-full flex flex-col space-y-4">
+          {/* Header compacto para widescreen */}
+          <div className="bg-success/10 p-3 rounded-lg text-center border border-success/20">
+            <h3 className="text-xl font-semibold text-success flex items-center justify-center gap-2">
+              <i className="fas fa-pills text-xl"></i>
               Sedoanalgesia e Antiepilépticos (pós-IOT)
             </h3>
           </div>
           
-          {/* Tabela responsiva */}
-          <div className="overflow-x-auto flex-1">
-            <table className="w-full border-collapse bg-white rounded-lg shadow-lg text-base">
-              <thead>
-                <tr className="bg-success text-success-foreground">
-                  <th className="border border-success/30 p-4 text-left font-semibold">Droga</th>
-                  <th className="border border-success/30 p-4 text-center font-semibold">Dose (mg/kg)</th>
-                  <th className="border border-success/30 p-4 text-center font-semibold">50 kg</th>
-                  <th className="border border-success/30 p-4 text-center font-semibold">75 kg</th>
-                  <th className="border border-success/30 p-4 text-center font-semibold">100 kg</th>
-                  <th className="border border-success/30 p-4 text-center font-semibold">Obs.</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-4 font-medium text-base">Midazolam 5 mg/mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">0,1 mg/kg (bolus)</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">5 mg = 1 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">7,5 mg = 1,5 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">10 mg = 2 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-primary font-medium">Infusão 0,05–2 µg/kg/min</td>
-                </tr>
-                <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-4 font-medium text-base">Propofol 10 mg/mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">1 mg/kg (bolus)</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">50 mg = 5 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">75 mg = 7,5 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">100 mg = 10 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-primary font-medium">Infusão 1–5 mg/kg/h</td>
-                </tr>
-                <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-4 font-medium text-base">Fentanil 50 µg/mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">1 µg/kg (bolus)</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">50 µg = 1 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">75 µg = 1,5 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">100 µg = 2 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-primary font-medium">Infusão 1–3 µg/kg/h</td>
-                </tr>
-                <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-4 font-medium text-base">Levetiracetam 100 mg/mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">60 mg/kg (máx 4,5 g)</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">3.000 mg = 30 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">4.500 mg = 45 mL (dose teto)</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">6.000 mg → limitar a 4.500 mg (45 mL)</td>
-                  <td className="border border-gray-300 p-4 text-center text-success font-medium">Infundir em 15 min</td>
-                </tr>
-                <tr className="hover:bg-accent/5">
-                  <td className="border border-gray-300 p-4 font-medium text-base">Fenitoína 50 mg/mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">15 mg/kg</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">750 mg = 15 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">1125 mg = 22,5 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-base">1500 mg = 30 mL</td>
-                  <td className="border border-gray-300 p-4 text-center text-accent font-medium">Máx 50 mg/min, monitorizar ECG</td>
-                </tr>
-              </tbody>
-            </table>
+          {/* Primeira tabela - SEDOANALGESIA */}
+          <div className="space-y-3">
+            <div className="bg-blue-100/60 p-2 rounded text-center">
+              <h4 className="font-bold text-blue-800 text-lg">SEDOANALGESIA</h4>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse bg-white rounded-lg shadow-lg text-sm">
+                <thead>
+                  <tr className="bg-blue-600 text-white">
+                    <th className="border border-blue-300 p-2 text-left font-semibold text-xs">Fármaco (Concentração Padrão)</th>
+                    <th className="border border-blue-300 p-2 text-center font-semibold text-xs">Preparo / Diluição Sugerida</th>
+                    <th className="border border-blue-300 p-2 text-center font-semibold text-xs">Dose de Manutenção (Infusão Contínua)</th>
+                    <th className="border border-blue-300 p-2 text-center font-semibold text-xs">Velocidade / Obs. de Infusão</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="hover:bg-accent/5">
+                    <td className="border border-gray-300 p-2 font-medium text-xs">Propofol (10 mg/mL ou 1%)</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">Não diluir (Usar puro).</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">5-50 µg/kg/min</td>
+                    <td className="border border-gray-300 p-2 text-xs">
+                      Infusão contínua. Deve ser monitorado de perto devido ao <strong className="text-red-600">risco de hipotensão</strong>.
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-accent/5">
+                    <td className="border border-gray-300 p-2 font-medium text-xs">Midazolam (5 mg/mL)</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">150 mg (30 mL) em 120 mL de SF 0,9% ou SG 5% (Concentração final: 1 mg/mL).</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">0,05-0,4 mg/kg/h</td>
+                    <td className="border border-gray-300 p-2 text-xs">
+                      <strong className="text-blue-600">Infusão contínua</strong>. Dose de ataque (bolus) é de 0,05 a 0,1 mg/kg.
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-accent/5">
+                    <td className="border border-gray-300 p-2 font-medium text-xs">Fentanil (50 µg/mL)</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">1.000 µg (20 mL) em 80 mL de SF 0,9% (Concentração final: 10 µg/mL). Também pode ser usado puro (não diluído) para facilitar a administração.</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">50 a 500 µg/h ou 0,02-0,07 µg/kg/min</td>
+                    <td className="border border-gray-300 p-2 text-xs">
+                      Administrar lentamente. Bolus de ataque: 0,5 a 1 µg/kg.
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-accent/5">
+                    <td className="border border-gray-300 p-2 font-medium text-xs">Quetamina (50 mg/mL)</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">Diluir 1 ampola em SF 98 mL (Concentração final: 1 mg/mL).</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">0,5-1,2 mg/kg/h (ou 0,1-0,5 mg/min)</td>
+                    <td className="border border-gray-300 p-2 text-xs">
+                      Pode ser usada como <strong className="text-green-600">sedativo e/ou analgésico</strong> pós-IOT.
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-accent/5">
+                    <td className="border border-gray-300 p-2 font-medium text-xs">Dexmedetomedina (100 µg/mL)</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">400 µg (2 ampolas) + 96 mL SF 0,9% (Concentração final: 4 µg/mL).</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">0,2-1,4 µg/kg/h</td>
+                    <td className="border border-gray-300 p-2 text-xs">
+                      <strong className="text-amber-600">Evitar bolus rápido</strong>. Deve ser evitada a infusão contínua acima de 1,4 µg/kg/h.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Segunda tabela - ANTIEPILÉPTICOS */}
+          <div className="space-y-3">
+            <div className="bg-red-100/60 p-2 rounded text-center">
+              <h4 className="font-bold text-red-800 text-lg">ANTIEPILÉPTICOS</h4>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse bg-white rounded-lg shadow-lg text-sm">
+                <thead>
+                  <tr className="bg-red-600 text-white">
+                    <th className="border border-red-300 p-2 text-left font-semibold text-xs">Fármaco (Concentração Padrão)</th>
+                    <th className="border border-red-300 p-2 text-center font-semibold text-xs">Dose de Ataque e Preparo Sugerido</th>
+                    <th className="border border-red-300 p-2 text-center font-semibold text-xs">Velocidade Máxima de Infusão</th>
+                    <th className="border border-red-300 p-2 text-center font-semibold text-xs">Observações de Prescrição</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="hover:bg-accent/5">
+                    <td className="border border-gray-300 p-2 font-medium text-xs">Fenitoína (50 mg/mL)</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">15-20 mg/kg EV. Diluir em Solução Fisiológica (SF 0,9%). <strong className="text-red-600">É incompatível com Soro Glicosado</strong>.</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">50 mg/min (Em idosos/cardiopatas, reduzir para 20-25 mg/min).</td>
+                    <td className="border border-gray-300 p-2 text-xs">
+                      <strong className="text-blue-600">Prescrever com filtro de linha</strong>. Risco de hipotensão e bradicardia se infundido rapidamente.
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-accent/5">
+                    <td className="border border-gray-300 p-2 font-medium text-xs">Ácido Valproico</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">40 mg/kg (Máximo 3.000 mg).</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">100 mg/min ou 6 mg/kg/min</td>
+                    <td className="border border-gray-300 p-2 text-xs">
+                      <strong className="text-green-600">As diretrizes europeias o sugerem como primeira linha</strong> para crises pós-PCR.
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-accent/5">
+                    <td className="border border-gray-300 p-2 font-medium text-xs">Levetiracetam (100 mg/mL)</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">200 a 400 mg EV (A dose de ataque para EME refratário pode ser maior - até 60 mg/kg).</td>
+                    <td className="border border-gray-300 p-2 text-center text-xs">Infusão em 15 minutos.</td>
+                    <td className="border border-gray-300 p-2 text-xs">
+                      <strong className="text-green-600">Sugerido como primeira linha</strong> para crises pós-PCR (junto com o Valproico).
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       ),
     },
     {
       id: 26,
-      title: "DOSES PRÁTICAS - Resumo Executivo",
+      title: "DOSES PRÁTICAS - Paciente 70 kg",
       type: 'content',
       content: (
-        <div className="h-full flex flex-col space-y-8 p-8">
-          {/* Grid de cards principais */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 flex-1">
-            <Card className="p-8 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30 flex flex-col justify-center">
-              <h3 className="text-xl font-semibold text-primary mb-6 flex items-center gap-3">
-                <i className="fas fa-bolt text-2xl"></i>
-                IOT Emergência
+        <div className="h-full flex flex-col space-y-4 p-4">
+          {/* Grid de cards principais - 2x2 */}
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 flex-1">
+            <Card className="p-4 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30 flex flex-col justify-center">
+              <h3 className="text-base font-semibold text-primary mb-3 flex items-center gap-2">
+                <i className="fas fa-bolt text-lg"></i>
+                IOT Emergência - Indução
               </h3>
-              <ul className="medical-list text-lg space-y-3">
-                <li><strong>Etomidato:</strong> 0,3 mg/kg (primeira escolha)</li>
-                <li><strong>Succinilcolina:</strong> 1,5 mg/kg</li>
-                <li><strong>⚠️ Reduzir doses</strong> se instabilidade hemodinâmica</li>
+              <ul className="medical-list text-sm space-y-1">
+                <li><strong>Etomidato:</strong> 0,3 mg/kg → 21 mg (10,5 mL) - 2 ampolas</li>
+                <li><strong>Quetamina:</strong> 1-2 mg/kg → 70-140 mg (1,4-2,8 mL)</li>
+                <li><strong>Propofol:</strong> 1,5-2 mg/kg → 105-140 mg (10,5-14 mL)</li>
+                <li><strong>Midazolam:</strong> 0,3 mg/kg → 21 mg (4,2 mL) - NÃO para SRI</li>
+                <li className="text-accent font-medium text-xs">⚠️ Reduzir hipnótico 30-50% se choque</li>
               </ul>
             </Card>
 
-            <Card className="p-8 bg-gradient-to-br from-success/10 to-success/5 border-success/30 flex flex-col justify-center">
-              <h3 className="text-xl font-semibold text-success mb-6 flex items-center gap-3">
-                <i className="fas fa-pills text-2xl"></i>
-                Sedação Pós-IOT
+            <Card className="p-4 bg-gradient-to-br from-success/10 to-success/5 border-success/30 flex flex-col justify-center">
+              <h3 className="text-base font-semibold text-success mb-3 flex items-center gap-2">
+                <i className="fas fa-muscle text-lg"></i>
+                Bloqueio Neuromuscular
               </h3>
-              <ul className="medical-list text-lg space-y-3">
-                <li><strong>Midazolam:</strong> 0,1 mg/kg bolus</li>
-                <li><strong>Fentanil:</strong> 1 µg/kg bolus</li>
-                <li>Infusão contínua conforme necessário</li>
+              <ul className="medical-list text-sm space-y-1">
+                <li><strong>Succinilcolina:</strong> 1,5 mg/kg → 105 mg (10,5 mL) - 2 ampolas</li>
+                <li><strong>Rocurônio:</strong> 1,2 mg/kg → 84 mg (8,4 mL) - 2 ampolas</li>
+                <li><strong>Atracúrio:</strong> 0,4-0,5 mg/kg → 28-35 mg</li>
+                <li><strong>Vecurônio:</strong> 0,08-0,1 mg/kg → 5,6-7 mg</li>
+                <li className="text-success font-medium text-xs">⏱️ Succinilcolina: &lt;60s | Rocurônio: &lt;120s</li>
               </ul>
             </Card>
 
-            <Card className="p-8 bg-gradient-to-br from-accent/10 to-accent/5 border-accent/30 flex flex-col justify-center">
-              <h3 className="text-xl font-semibold text-accent mb-6 flex items-center gap-3">
-                <i className="fas fa-brain text-2xl"></i>
-                Anticonvulsivantes
+            <Card className="p-4 bg-gradient-to-br from-info/10 to-info/5 border-info/30 flex flex-col justify-center">
+              <h3 className="text-base font-semibold text-info mb-3 flex items-center gap-2">
+                <i className="fas fa-pills text-lg"></i>
+                Sedoanalgesia Pós-IOT
               </h3>
-              <ul className="medical-list text-lg space-y-3">
-                <li><strong>Levetiracetam:</strong> 60 mg/kg (máx 4,5g)</li>
-                <li><strong>Fenitoína:</strong> 15 mg/kg</li>
-                <li>EEG contínuo é mandatório</li>
+              <ul className="medical-list text-sm space-y-1">
+                <li><strong>Midazolam:</strong> Bolus 3,5-14 mg | Infusão 7 mL/h (0,1 mg/kg/h)</li>
+                <li><strong>Propofol:</strong> Bolus 70-210 mg | Infusão 21 mL/h (50 µg/kg/min)</li>
+                <li><strong>Fentanil:</strong> Bolus 70-140 µg | Infusão 4,2 mL/h (0,05 µg/kg/min)</li>
+                <li><strong>Morfina:</strong> Bolus 3,5-14 mg | Infusão 0,8-10 mg/h</li>
+                <li className="text-info font-medium text-xs">🎯 Meta: RASS -2 a -3</li>
               </ul>
             </Card>
 
-            <Card className="p-8 bg-gradient-to-br from-warning/10 to-warning/5 border-warning/30 flex flex-col justify-center">
-              <h3 className="text-xl font-semibold text-warning mb-6 flex items-center gap-3">
-                <i className="fas fa-exclamation-triangle text-2xl"></i>
-                Pontos Críticos
+            <Card className="p-4 bg-gradient-to-br from-accent/10 to-accent/5 border-accent/30 flex flex-col justify-center">
+              <h3 className="text-base font-semibold text-accent mb-3 flex items-center gap-2">
+                <i className="fas fa-brain text-lg"></i>
+                Antiepilépticos (70 kg)
               </h3>
-              <ul className="medical-list text-lg space-y-3">
-                <li>Sempre <strong>calcular</strong> a dose pelo peso</li>
-                <li><strong>Monitorização</strong> hemodinâmica contínua</li>
-                <li>Ter <strong>antidotos</strong> sempre disponíveis</li>
+              <ul className="medical-list text-sm space-y-1">
+                <li><strong>Levetiracetam:</strong> 40-60 mg/kg → 2.800-4.200 mg (máx 4.500 mg)</li>
+                <li><strong>Fenitoína:</strong> 15-20 mg/kg → 1.050-1.400 mg (21-28 mL)</li>
+                <li><strong>Ácido Valproico:</strong> 15-45 mg/kg → 1.050-3.000 mg</li>
+                <li><strong>Lacosamida:</strong> 200-400 mg (dose fixa)</li>
+                <li className="text-accent font-medium text-xs">📊 EEG contínuo OBRIGATÓRIO</li>
               </ul>
             </Card>
           </div>
 
-          {/* Mensagem final */}
-          <div className="bg-primary/10 p-8 rounded-lg text-center border border-primary/20">
-            <p className="text-xl font-medium text-primary">
-              <i className="fas fa-clipboard-check mr-3 text-2xl"></i>
-              Doses calculadas para facilitar a prática clínica. Sempre considere o contexto individual do paciente.
-            </p>
+          {/* Cards de pontos críticos específicos - horizontal */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+            <Card className="p-3 bg-gradient-to-br from-warning/10 to-warning/5 border-warning/30">
+              <div className="text-center">
+                <i className="fas fa-calculator text-warning text-lg mb-1"></i>
+                <h4 className="font-semibold text-warning mb-1 text-sm">Cálculo</h4>
+                <p className="text-xs">Hipnóticos: <strong>Peso Ideal</strong><br/>BNM: <strong>Peso Total</strong></p>
+              </div>
+            </Card>
+
+            <Card className="p-3 bg-gradient-to-br from-red-500/10 to-red-500/5 border-red-500/30">
+              <div className="text-center">
+                <i className="fas fa-heartbeat text-red-500 text-lg mb-1"></i>
+                <h4 className="font-semibold text-red-500 mb-1 text-sm">Monitorização</h4>
+                <p className="text-xs">PA, ECG, SatO₂<br/><strong>PAM &gt; 65 mmHg</strong></p>
+              </div>
+            </Card>
+
+            <Card className="p-3 bg-gradient-to-br from-purple-500/10 to-purple-500/5 border-purple-500/30">
+              <div className="text-center">
+                <i className="fas fa-clock text-purple-500 text-lg mb-1"></i>
+                <h4 className="font-semibold text-purple-500 mb-1 text-sm">Velocidades</h4>
+                <p className="text-xs">Fenitoína: <strong>&lt;50 mg/min</strong><br/>Valproico: 100 mg/min</p>
+              </div>
+            </Card>
+
+            <Card className="p-3 bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 border-emerald-500/30">
+              <div className="text-center">
+                <i className="fas fa-shield-alt text-emerald-500 text-lg mb-1"></i>
+                <h4 className="font-semibold text-emerald-500 mb-1 text-sm">Antídotos</h4>
+                <p className="text-xs"><strong>Naloxona</strong> (opioides)<br/>Flumazenil (cuidado!)</p>
+              </div>
+            </Card>
           </div>
         </div>
       ),
@@ -1754,7 +1944,7 @@ const PowerPointPresentation = () => {
           <div className="bg-gradient-to-r from-primary/10 to-success/10 p-6 rounded-lg">
             <p className="text-lg font-medium">
               <i className="fas fa-lightbulb mr-2"></i>
-              Juntos pela excelência em emergência médica
+              Não deixe seu paciente após o RCE — o cuidado começa agora.
             </p>
           </div>
         </div>
